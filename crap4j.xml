@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crap_result>
+  <project/>
+  <timestamp>2024-08-16 05:56:43</timestamp>
+  <stats>
+    <name>Method Crap Stats</name>
+    <methodCount>61</methodCount>
+    <crapMethodCount>0</crapMethodCount>
+    <crapLoad>0</crapLoad>
+    <totalCrap>220</totalCrap>
+    <crapMethodPercent>0</crapMethodPercent>
+  </stats>
+  <methods>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\IndexController</className>
+      <methodName>index</methodName>
+      <methodSignature>index(): Illuminate\View\View</methodSignature>
+      <fullMethod>index(): Illuminate\View\View</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>create</methodName>
+      <methodSignature>create(Playground\Directory\Resource\Http\Requests\Location\CreateRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Location</methodSignature>
+      <fullMethod>create(Playground\Directory\Resource\Http\Requests\Location\CreateRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Location</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>edit</methodName>
+      <methodSignature>edit(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\EditRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Location</methodSignature>
+      <fullMethod>edit(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\EditRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Location</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>destroy</methodName>
+      <methodSignature>destroy(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\DestroyRequest $request): \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>destroy(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\DestroyRequest $request): \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>lock</methodName>
+      <methodSignature>lock(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\LockRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</methodSignature>
+      <fullMethod>lock(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\LockRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>index</methodName>
+      <methodSignature>index(Playground\Directory\Resource\Http\Requests\Location\IndexRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\LocationCollection</methodSignature>
+      <fullMethod>index(Playground\Directory\Resource\Http\Requests\Location\IndexRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\LocationCollection</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>restore</methodName>
+      <methodSignature>restore(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\RestoreRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</methodSignature>
+      <fullMethod>restore(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\RestoreRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>restoreRevision</methodName>
+      <methodSignature>restoreRevision(Playground\Directory\Models\LocationRevision $location_revision, Playground\Directory\Resource\Http\Requests\Location\RestoreRevisionRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</methodSignature>
+      <fullMethod>restoreRevision(Playground\Directory\Models\LocationRevision $location_revision, Playground\Directory\Resource\Http\Requests\Location\RestoreRevisionRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>revision</methodName>
+      <methodSignature>revision(Playground\Directory\Models\LocationRevision $location_revision, Playground\Directory\Resource\Http\Requests\Location\ShowRevisionRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\LocationRevision</methodSignature>
+      <fullMethod>revision(Playground\Directory\Models\LocationRevision $location_revision, Playground\Directory\Resource\Http\Requests\Location\ShowRevisionRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\LocationRevision</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>revisions</methodName>
+      <methodSignature>revisions(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\RevisionsRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\LocationRevisionCollection</methodSignature>
+      <fullMethod>revisions(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\RevisionsRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\LocationRevisionCollection</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>saveRevision</methodName>
+      <methodSignature>saveRevision(Playground\Directory\Models\Location $location): Playground\Directory\Models\LocationRevision</methodSignature>
+      <fullMethod>saveRevision(Playground\Directory\Models\Location $location): Playground\Directory\Models\LocationRevision</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>show</methodName>
+      <methodSignature>show(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\ShowRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Location</methodSignature>
+      <fullMethod>show(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\ShowRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Location</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(Playground\Directory\Resource\Http\Requests\Location\StoreRequest $request): \Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</methodSignature>
+      <fullMethod>store(Playground\Directory\Resource\Http\Requests\Location\StoreRequest $request): \Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>unlock</methodName>
+      <methodSignature>unlock(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\UnlockRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</methodSignature>
+      <fullMethod>unlock(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\UnlockRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\LocationController</className>
+      <methodName>update</methodName>
+      <methodSignature>update(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\UpdateRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</methodSignature>
+      <fullMethod>update(Playground\Directory\Models\Location $location, Playground\Directory\Resource\Http\Requests\Location\UpdateRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Location</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>create</methodName>
+      <methodSignature>create(Playground\Directory\Resource\Http\Requests\Sublocation\CreateRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Sublocation</methodSignature>
+      <fullMethod>create(Playground\Directory\Resource\Http\Requests\Sublocation\CreateRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Sublocation</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>edit</methodName>
+      <methodSignature>edit(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\EditRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Sublocation</methodSignature>
+      <fullMethod>edit(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\EditRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Sublocation</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>destroy</methodName>
+      <methodSignature>destroy(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\DestroyRequest $request): \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>destroy(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\DestroyRequest $request): \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>lock</methodName>
+      <methodSignature>lock(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\LockRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</methodSignature>
+      <fullMethod>lock(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\LockRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>index</methodName>
+      <methodSignature>index(Playground\Directory\Resource\Http\Requests\Sublocation\IndexRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\SublocationCollection</methodSignature>
+      <fullMethod>index(Playground\Directory\Resource\Http\Requests\Sublocation\IndexRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\SublocationCollection</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>restore</methodName>
+      <methodSignature>restore(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\RestoreRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</methodSignature>
+      <fullMethod>restore(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\RestoreRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>restoreRevision</methodName>
+      <methodSignature>restoreRevision(Playground\Directory\Models\SublocationRevision $sublocation_revision, Playground\Directory\Resource\Http\Requests\Sublocation\RestoreRevisionRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</methodSignature>
+      <fullMethod>restoreRevision(Playground\Directory\Models\SublocationRevision $sublocation_revision, Playground\Directory\Resource\Http\Requests\Sublocation\RestoreRevisionRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>revision</methodName>
+      <methodSignature>revision(Playground\Directory\Models\SublocationRevision $sublocation_revision, Playground\Directory\Resource\Http\Requests\Sublocation\ShowRevisionRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\SublocationRevision</methodSignature>
+      <fullMethod>revision(Playground\Directory\Models\SublocationRevision $sublocation_revision, Playground\Directory\Resource\Http\Requests\Sublocation\ShowRevisionRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\SublocationRevision</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>revisions</methodName>
+      <methodSignature>revisions(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\RevisionsRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\SublocationRevisionCollection</methodSignature>
+      <fullMethod>revisions(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\RevisionsRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\SublocationRevisionCollection</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>saveRevision</methodName>
+      <methodSignature>saveRevision(Playground\Directory\Models\Sublocation $sublocation): Playground\Directory\Models\SublocationRevision</methodSignature>
+      <fullMethod>saveRevision(Playground\Directory\Models\Sublocation $sublocation): Playground\Directory\Models\SublocationRevision</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>show</methodName>
+      <methodSignature>show(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\ShowRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Sublocation</methodSignature>
+      <fullMethod>show(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\ShowRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\View\View|\Playground\Directory\Resource\Http\Resources\Sublocation</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(Playground\Directory\Resource\Http\Requests\Sublocation\StoreRequest $request): \Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</methodSignature>
+      <fullMethod>store(Playground\Directory\Resource\Http\Requests\Sublocation\StoreRequest $request): \Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>unlock</methodName>
+      <methodSignature>unlock(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\UnlockRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</methodSignature>
+      <fullMethod>unlock(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\UnlockRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
+      <methodName>update</methodName>
+      <methodSignature>update(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\UpdateRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</methodSignature>
+      <fullMethod>update(Playground\Directory\Models\Sublocation $sublocation, Playground\Directory\Resource\Http\Requests\Sublocation\UpdateRequest $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Playground\Directory\Resource\Http\Resources\Sublocation</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests</package>
+      <className>Playground\Directory\Resource\Http\Requests\FormRequest</className>
+      <methodName>authorize</methodName>
+      <methodSignature>authorize(): bool</methodSignature>
+      <fullMethod>authorize(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests</package>
+      <className>Playground\Directory\Resource\Http\Requests\FormRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests</package>
+      <className>Playground\Directory\Resource\Http\Requests\FormRequest</className>
+      <methodName>userHasAdminPrivileges</methodName>
+      <methodSignature>userHasAdminPrivileges(Illuminate\Contracts\Auth\Authenticatable $user): bool</methodSignature>
+      <fullMethod>userHasAdminPrivileges(Illuminate\Contracts\Auth\Authenticatable $user): bool</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests\Location</package>
+      <className>Playground\Directory\Resource\Http\Requests\Location\DestroyRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests\Location</package>
+      <className>Playground\Directory\Resource\Http\Requests\Location\StoreRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests\Location</package>
+      <className>Playground\Directory\Resource\Http\Requests\Location\StoreRequest</className>
+      <methodName>prepareForValidation</methodName>
+      <methodSignature>prepareForValidation()</methodSignature>
+      <fullMethod>prepareForValidation()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests\Location</package>
+      <className>Playground\Directory\Resource\Http\Requests\Location\UpdateRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests\Location</package>
+      <className>Playground\Directory\Resource\Http\Requests\Location\UpdateRequest</className>
+      <methodName>prepareForValidation</methodName>
+      <methodSignature>prepareForValidation()</methodSignature>
+      <fullMethod>prepareForValidation()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests\Sublocation</package>
+      <className>Playground\Directory\Resource\Http\Requests\Sublocation\DestroyRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests\Sublocation</package>
+      <className>Playground\Directory\Resource\Http\Requests\Sublocation\StoreRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests\Sublocation</package>
+      <className>Playground\Directory\Resource\Http\Requests\Sublocation\StoreRequest</className>
+      <methodName>prepareForValidation</methodName>
+      <methodSignature>prepareForValidation()</methodSignature>
+      <fullMethod>prepareForValidation()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests\Sublocation</package>
+      <className>Playground\Directory\Resource\Http\Requests\Sublocation\UpdateRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Requests\Sublocation</package>
+      <className>Playground\Directory\Resource\Http\Requests\Sublocation\UpdateRequest</className>
+      <methodName>prepareForValidation</methodName>
+      <methodSignature>prepareForValidation()</methodSignature>
+      <fullMethod>prepareForValidation()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\Location</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Illuminate\Http\Request $request): array</methodSignature>
+      <fullMethod>with(Illuminate\Http\Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\LocationCollection</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Illuminate\Http\Request $request): array</methodSignature>
+      <fullMethod>with(Illuminate\Http\Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\LocationRevision</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Illuminate\Http\Request $request): array</methodSignature>
+      <fullMethod>with(Illuminate\Http\Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\LocationRevisionCollection</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Illuminate\Http\Request $request): array</methodSignature>
+      <fullMethod>with(Illuminate\Http\Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\Sublocation</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Illuminate\Http\Request $request): array</methodSignature>
+      <fullMethod>with(Illuminate\Http\Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\SublocationCollection</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Illuminate\Http\Request $request): array</methodSignature>
+      <fullMethod>with(Illuminate\Http\Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\SublocationRevision</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Illuminate\Http\Request $request): array</methodSignature>
+      <fullMethod>with(Illuminate\Http\Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\SublocationRevisionCollection</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Illuminate\Http\Request $request): array</methodSignature>
+      <fullMethod>with(Illuminate\Http\Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Policies</package>
+      <className>Playground\Directory\Resource\Policies\LocationPolicy</className>
+      <methodName>revisions</methodName>
+      <methodSignature>revisions(Illuminate\Contracts\Auth\Authenticatable $user): bool|\Illuminate\Auth\Access\Response</methodSignature>
+      <fullMethod>revisions(Illuminate\Contracts\Auth\Authenticatable $user): bool|\Illuminate\Auth\Access\Response</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Policies</package>
+      <className>Playground\Directory\Resource\Policies\LocationPolicy</className>
+      <methodName>viewRevision</methodName>
+      <methodSignature>viewRevision(Illuminate\Contracts\Auth\Authenticatable $user, Playground\Directory\Models\LocationRevision $location_revision): bool|\Illuminate\Auth\Access\Response</methodSignature>
+      <fullMethod>viewRevision(Illuminate\Contracts\Auth\Authenticatable $user, Playground\Directory\Models\LocationRevision $location_revision): bool|\Illuminate\Auth\Access\Response</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Policies</package>
+      <className>Playground\Directory\Resource\Policies\LocationPolicy</className>
+      <methodName>restoreRevision</methodName>
+      <methodSignature>restoreRevision(Illuminate\Contracts\Auth\Authenticatable $user, Playground\Directory\Models\LocationRevision $location_revision): bool|\Illuminate\Auth\Access\Response</methodSignature>
+      <fullMethod>restoreRevision(Illuminate\Contracts\Auth\Authenticatable $user, Playground\Directory\Models\LocationRevision $location_revision): bool|\Illuminate\Auth\Access\Response</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Policies</package>
+      <className>Playground\Directory\Resource\Policies\SublocationPolicy</className>
+      <methodName>revisions</methodName>
+      <methodSignature>revisions(Illuminate\Contracts\Auth\Authenticatable $user): bool|\Illuminate\Auth\Access\Response</methodSignature>
+      <fullMethod>revisions(Illuminate\Contracts\Auth\Authenticatable $user): bool|\Illuminate\Auth\Access\Response</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Policies</package>
+      <className>Playground\Directory\Resource\Policies\SublocationPolicy</className>
+      <methodName>viewRevision</methodName>
+      <methodSignature>viewRevision(Illuminate\Contracts\Auth\Authenticatable $user, Playground\Directory\Models\SublocationRevision $sublocation_revision): bool|\Illuminate\Auth\Access\Response</methodSignature>
+      <fullMethod>viewRevision(Illuminate\Contracts\Auth\Authenticatable $user, Playground\Directory\Models\SublocationRevision $sublocation_revision): bool|\Illuminate\Auth\Access\Response</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Policies</package>
+      <className>Playground\Directory\Resource\Policies\SublocationPolicy</className>
+      <methodName>restoreRevision</methodName>
+      <methodSignature>restoreRevision(Illuminate\Contracts\Auth\Authenticatable $user, Playground\Directory\Models\SublocationRevision $sublocation_revision): bool|\Illuminate\Auth\Access\Response</methodSignature>
+      <fullMethod>restoreRevision(Illuminate\Contracts\Auth\Authenticatable $user, Playground\Directory\Models\SublocationRevision $sublocation_revision): bool|\Illuminate\Auth\Access\Response</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource</package>
+      <className>Playground\Directory\Resource\ServiceProvider</className>
+      <methodName>boot</methodName>
+      <methodSignature>boot(): void</methodSignature>
+      <fullMethod>boot(): void</fullMethod>
+      <crap>13</crap>
+      <complexity>13</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource</package>
+      <className>Playground\Directory\Resource\ServiceProvider</className>
+      <methodName>register</methodName>
+      <methodSignature>register(): void</methodSignature>
+      <fullMethod>register(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource</package>
+      <className>Playground\Directory\Resource\ServiceProvider</className>
+      <methodName>setPolicies</methodName>
+      <methodSignature>setPolicies(array $policies): void</methodSignature>
+      <fullMethod>setPolicies(array $policies): void</fullMethod>
+      <crap>10</crap>
+      <complexity>10</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource</package>
+      <className>Playground\Directory\Resource\ServiceProvider</className>
+      <methodName>routes</methodName>
+      <methodSignature>routes(array $config): void</methodSignature>
+      <fullMethod>routes(array $config): void</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource</package>
+      <className>Playground\Directory\Resource\ServiceProvider</className>
+      <methodName>about</methodName>
+      <methodSignature>about(): void</methodSignature>
+      <fullMethod>about(): void</fullMethod>
+      <crap>24</crap>
+      <complexity>24</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+  </methods>
+</crap_result>
