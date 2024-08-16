@@ -1,0 +1,51 @@
+parameters:
+  -
+    in: path
+    name: id
+    required: true
+    description: 'The location revision id.'
+    schema:
+      type: string
+      format: uuid
+get:
+  tags:
+    - Location
+  summary: 'Show a location revision by ID.'
+  operationId: revision_location
+  responses:
+    200:
+      description: 'The location revision.'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: ../../models/location-revision.yml
+              meta:
+                type: object
+    401:
+      description: Unauthorized
+    403:
+      description: Forbidden
+put:
+  tags:
+    - Location
+  summary: 'Restore a location Revision by ID.'
+  operationId: restore_revision_location
+  responses:
+    200:
+      description: 'The restored location.'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: ../../models/location.yml
+              meta:
+                type: object
+    401:
+      description: Unauthorized
+    403:
+      description: Forbidden

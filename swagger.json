@@ -1,0 +1,4430 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Playground Directory Resource",
+    "description": "Playground: Provides an API and a Blade UI for interacting with Playground Directory, a Directory System for Laravel applications.",
+    "version": "73.0.0"
+  },
+  "externalDocs": {
+    "url": "https://gammamatrix-playground.readthedocs.io/en/develop/components/directory.html",
+    "description": "Read the Docs: Playground Directory Packages"
+  },
+  "servers": [
+    {
+      "url": "https://api.example.com",
+      "description": "Production Server"
+    },
+    {
+      "url": "https://api.staging.example.com",
+      "description": "Staging Server"
+    },
+    {
+      "url": "https://api.dev.example.com",
+      "description": "Dev Server"
+    },
+    {
+      "url": "http://localhost",
+      "description": "Local Server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Location",
+      "description": "Manage locations in storage."
+    },
+    {
+      "name": "Sublocation",
+      "description": "Manage sublocations in storage."
+    }
+  ],
+  "paths": {
+    "/resource/directory/locations/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The location id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Get a location by id.",
+        "operationId": "get_location",
+        "responses": {
+          "200": {
+            "description": "The location data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Location"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Delete a location by id.",
+        "operationId": "delete_location",
+        "responses": {
+          "204": {
+            "description": "The location has been deleted."
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "423": {
+            "description": "The location is locked. Unlock to delete."
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Patch a location by id.",
+        "operationId": "patch_location",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "The Directory Location fillable properties.",
+                "type": "object",
+                "properties": {
+                  "location_type": {
+                    "description": "The location type of this location.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "owned_by_id": {
+                    "description": "Foreign key: links an owned by user to this location.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "parent_id": {
+                    "description": "ID: a parent of this location.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "matrix_id": {
+                    "description": "Foreign key: links a matrix to this location.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "canceled_at": {
+                    "description": "The canceled at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "closed_at": {
+                    "description": "The closed at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "embargo_at": {
+                    "description": "The embargo at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "fixed_at": {
+                    "description": "The fixed at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "planned_end_at": {
+                    "description": "The planned end at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "planned_start_at": {
+                    "description": "The planned start at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "postponed_at": {
+                    "description": "The postponed at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "published_at": {
+                    "description": "The published at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "released_at": {
+                    "description": "The released at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "resumed_at": {
+                    "description": "The resumed at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "resolved_at": {
+                    "description": "The resolved at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "suspended_at": {
+                    "description": "The suspended at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "timer_end_at": {
+                    "description": "The timer end at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "timer_start_at": {
+                    "description": "The timer start at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "gids": {
+                    "description": "Permissions: gids",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "po": {
+                    "description": "Permissions: po",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "pg": {
+                    "description": "Permissions: pg",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "pw": {
+                    "description": "Permissions: pw",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "only_admin": {
+                    "description": "Permissions: only admin",
+                    "type": "boolean"
+                  },
+                  "only_user": {
+                    "description": "Permissions: only user",
+                    "type": "boolean"
+                  },
+                  "only_guest": {
+                    "description": "Permissions: only guest",
+                    "type": "boolean"
+                  },
+                  "allow_public": {
+                    "description": "Permissions: allow public",
+                    "type": "boolean"
+                  },
+                  "status": {
+                    "description": "The status of the location.",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "rank": {
+                    "description": "Status: rank",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "size": {
+                    "description": "Status: size",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "icon": {
+                    "description": "Ui: icon",
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "image": {
+                    "description": "Ui: image",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "avatar": {
+                    "description": "Ui: avatar",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "ui": {
+                    "description": "The ui of the location.",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "active": {
+                    "description": "Flags: active",
+                    "type": "boolean"
+                  },
+                  "canceled": {
+                    "description": "Flags: canceled",
+                    "type": "boolean"
+                  },
+                  "closed": {
+                    "description": "Flags: closed",
+                    "type": "boolean"
+                  },
+                  "completed": {
+                    "description": "Flags: completed",
+                    "type": "boolean"
+                  },
+                  "cron": {
+                    "description": "Flags: cron",
+                    "type": "boolean"
+                  },
+                  "duplicate": {
+                    "description": "Flags: duplicate",
+                    "type": "boolean"
+                  },
+                  "fixed": {
+                    "description": "Flags: fixed",
+                    "type": "boolean"
+                  },
+                  "flagged": {
+                    "description": "Flags: flagged",
+                    "type": "boolean"
+                  },
+                  "internal": {
+                    "description": "Flags: internal",
+                    "type": "boolean"
+                  },
+                  "locked": {
+                    "description": "Flags: locked",
+                    "type": "boolean"
+                  },
+                  "pending": {
+                    "description": "Flags: pending",
+                    "type": "boolean"
+                  },
+                  "planned": {
+                    "description": "Flags: planned",
+                    "type": "boolean"
+                  },
+                  "prioritized": {
+                    "description": "Flags: prioritized",
+                    "type": "boolean"
+                  },
+                  "problem": {
+                    "description": "Flags: problem",
+                    "type": "boolean"
+                  },
+                  "published": {
+                    "description": "Flags: published",
+                    "type": "boolean"
+                  },
+                  "released": {
+                    "description": "Flags: released",
+                    "type": "boolean"
+                  },
+                  "resolved": {
+                    "description": "Flags: resolved",
+                    "type": "boolean"
+                  },
+                  "retired": {
+                    "description": "Flags: retired",
+                    "type": "boolean"
+                  },
+                  "sitemap": {
+                    "description": "Flags: sitemap",
+                    "type": "boolean"
+                  },
+                  "suspended": {
+                    "description": "Flags: suspended",
+                    "type": "boolean"
+                  },
+                  "unknown": {
+                    "description": "Flags: unknown",
+                    "type": "boolean"
+                  },
+                  "locale": {
+                    "description": "The locale of the location.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "label": {
+                    "description": "The label of the location.",
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "title": {
+                    "description": "The title of the location.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "byline": {
+                    "description": "The byline of the location.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "slug": {
+                    "description": "The slug of the location.",
+                    "type": "string",
+                    "maxLength": 128,
+                    "nullable": true
+                  },
+                  "url": {
+                    "description": "The url of the location.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "description": {
+                    "description": "The description of the location.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "introduction": {
+                    "description": "The introduction of the location.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "content": {
+                    "description": "The content of the location. Allows HTML.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "summary": {
+                    "description": "The summary of the location. Allows HTML.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "phone": {
+                    "description": "The phone of the location.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "address": {
+                    "description": "JSON: address",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "assets": {
+                    "description": "JSON: assets",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "contact": {
+                    "description": "JSON: contact",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "meta": {
+                    "description": "JSON: meta",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "options": {
+                    "description": "JSON: options",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "sources": {
+                    "description": "JSON: sources",
+                    "type": "object",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The location has been patched.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Location"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "422": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "example": "The title field is required."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "423": {
+            "description": "The location is locked. Unlock to patch."
+          }
+        }
+      }
+    },
+    "/resource/directory/locations": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Get locations from the index.",
+        "operationId": "get_locations_index",
+        "responses": {
+          "200": {
+            "description": "Get the locations from the index.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Location"
+                      }
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Create a location.",
+        "operationId": "post_location",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "The Directory Location fillable properties.",
+                "type": "object",
+                "properties": {
+                  "location_type": {
+                    "description": "The location type of this location.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "owned_by_id": {
+                    "description": "Foreign key: links an owned by user to this location.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "parent_id": {
+                    "description": "ID: a parent of this location.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "matrix_id": {
+                    "description": "Foreign key: links a matrix to this location.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "canceled_at": {
+                    "description": "The canceled at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "closed_at": {
+                    "description": "The closed at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "embargo_at": {
+                    "description": "The embargo at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "fixed_at": {
+                    "description": "The fixed at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "planned_end_at": {
+                    "description": "The planned end at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "planned_start_at": {
+                    "description": "The planned start at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "postponed_at": {
+                    "description": "The postponed at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "published_at": {
+                    "description": "The published at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "released_at": {
+                    "description": "The released at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "resumed_at": {
+                    "description": "The resumed at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "resolved_at": {
+                    "description": "The resolved at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "suspended_at": {
+                    "description": "The suspended at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "timer_end_at": {
+                    "description": "The timer end at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "timer_start_at": {
+                    "description": "The timer start at date for this location.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "gids": {
+                    "description": "Permissions: gids",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "po": {
+                    "description": "Permissions: po",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "pg": {
+                    "description": "Permissions: pg",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "pw": {
+                    "description": "Permissions: pw",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "only_admin": {
+                    "description": "Permissions: only admin",
+                    "type": "boolean"
+                  },
+                  "only_user": {
+                    "description": "Permissions: only user",
+                    "type": "boolean"
+                  },
+                  "only_guest": {
+                    "description": "Permissions: only guest",
+                    "type": "boolean"
+                  },
+                  "allow_public": {
+                    "description": "Permissions: allow public",
+                    "type": "boolean"
+                  },
+                  "status": {
+                    "description": "The status of the location.",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "rank": {
+                    "description": "Status: rank",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "size": {
+                    "description": "Status: size",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "icon": {
+                    "description": "Ui: icon",
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "image": {
+                    "description": "Ui: image",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "avatar": {
+                    "description": "Ui: avatar",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "ui": {
+                    "description": "The ui of the location.",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "active": {
+                    "description": "Flags: active",
+                    "type": "boolean"
+                  },
+                  "canceled": {
+                    "description": "Flags: canceled",
+                    "type": "boolean"
+                  },
+                  "closed": {
+                    "description": "Flags: closed",
+                    "type": "boolean"
+                  },
+                  "completed": {
+                    "description": "Flags: completed",
+                    "type": "boolean"
+                  },
+                  "cron": {
+                    "description": "Flags: cron",
+                    "type": "boolean"
+                  },
+                  "duplicate": {
+                    "description": "Flags: duplicate",
+                    "type": "boolean"
+                  },
+                  "fixed": {
+                    "description": "Flags: fixed",
+                    "type": "boolean"
+                  },
+                  "flagged": {
+                    "description": "Flags: flagged",
+                    "type": "boolean"
+                  },
+                  "internal": {
+                    "description": "Flags: internal",
+                    "type": "boolean"
+                  },
+                  "locked": {
+                    "description": "Flags: locked",
+                    "type": "boolean"
+                  },
+                  "pending": {
+                    "description": "Flags: pending",
+                    "type": "boolean"
+                  },
+                  "planned": {
+                    "description": "Flags: planned",
+                    "type": "boolean"
+                  },
+                  "prioritized": {
+                    "description": "Flags: prioritized",
+                    "type": "boolean"
+                  },
+                  "problem": {
+                    "description": "Flags: problem",
+                    "type": "boolean"
+                  },
+                  "published": {
+                    "description": "Flags: published",
+                    "type": "boolean"
+                  },
+                  "released": {
+                    "description": "Flags: released",
+                    "type": "boolean"
+                  },
+                  "resolved": {
+                    "description": "Flags: resolved",
+                    "type": "boolean"
+                  },
+                  "retired": {
+                    "description": "Flags: retired",
+                    "type": "boolean"
+                  },
+                  "sitemap": {
+                    "description": "Flags: sitemap",
+                    "type": "boolean"
+                  },
+                  "suspended": {
+                    "description": "Flags: suspended",
+                    "type": "boolean"
+                  },
+                  "unknown": {
+                    "description": "Flags: unknown",
+                    "type": "boolean"
+                  },
+                  "locale": {
+                    "description": "The locale of the location.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "label": {
+                    "description": "The label of the location.",
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "title": {
+                    "description": "The title of the location.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "byline": {
+                    "description": "The byline of the location.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "slug": {
+                    "description": "The slug of the location.",
+                    "type": "string",
+                    "maxLength": 128,
+                    "nullable": true
+                  },
+                  "url": {
+                    "description": "The url of the location.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "description": {
+                    "description": "The description of the location.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "introduction": {
+                    "description": "The introduction of the location.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "content": {
+                    "description": "The content of the location. Allows HTML.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "summary": {
+                    "description": "The summary of the location. Allows HTML.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "phone": {
+                    "description": "The phone of the location.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "address": {
+                    "description": "JSON: address",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "assets": {
+                    "description": "JSON: assets",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "contact": {
+                    "description": "JSON: contact",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "meta": {
+                    "description": "JSON: meta",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "options": {
+                    "description": "JSON: options",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "sources": {
+                    "description": "JSON: sources",
+                    "type": "object",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The created location.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Location"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "422": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "example": "The title field is required."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "423": {
+            "description": "The location is locked. Unlock to patch."
+          }
+        }
+      }
+    },
+    "/resource/directory/locations/index": {
+      "post": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Get locations from the index using POST.",
+        "operationId": "post_locations_index",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "The Directory Location index form.",
+                "type": "object",
+                "properties": {
+                  "perPage": {
+                    "description": "Specify the number of records to display per page for pagination.",
+                    "type": "integer",
+                    "example": 10
+                  },
+                  "page": {
+                    "description": "Select a page for pagination.",
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "offset": {
+                    "description": "Select the zero-based index offset for pagination.",
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "filter": {
+                    "description": "Filter options for the Location.",
+                    "type": "object",
+                    "properties": {
+                      "trash": {
+                        "description": "Filter trash options",
+                        "type": "integer",
+                        "example": 1,
+                        "enum": [
+                          "with",
+                          "only",
+                          ""
+                        ]
+                      },
+                      "page_type": {
+                        "description": "The Location type of this Location.",
+                        "type": "integer",
+                        "example": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Get the locations from the index.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Location"
+                      }
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/locations/lock/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The location id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "delete": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Delete a location by id.",
+        "operationId": "unlock_location",
+        "responses": {
+          "204": {
+            "description": "The location has been unlocked."
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Lock a location by ID.",
+        "operationId": "lock_location",
+        "responses": {
+          "200": {
+            "description": "The unlocked location.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Location"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/locations/restore/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The location id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "put": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Restore a location from the trash by ID.",
+        "operationId": "restore_location",
+        "responses": {
+          "200": {
+            "description": "The restored location.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Location"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/locations/revision/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The location revision id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Show a location revision by ID.",
+        "operationId": "revision_location",
+        "responses": {
+          "200": {
+            "description": "The location revision.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/LocationRevision"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Restore a location Revision by ID.",
+        "operationId": "restore_revision_location",
+        "responses": {
+          "200": {
+            "description": "The restored location.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Location"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/locations/{id}/revisions": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The location id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Get the revisions of a location.",
+        "operationId": "revision_index_location",
+        "responses": {
+          "200": {
+            "description": "The location revisions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/LocationRevision"
+                      }
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/locations/create": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Create a location form.",
+        "operationId": "create_location",
+        "responses": {
+          "200": {
+            "description": "The create location information (JSON) or (HTML).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Location"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": "<html><body><form method=\"POST\" action=\"/resource/directory/locations\">Create a location</form></body></html>"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/locations/edit/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The location id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "summary": "Edit a location form.",
+        "operationId": "edit_location",
+        "responses": {
+          "200": {
+            "description": "The edit location information (JSON) or (HTML).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Location"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": "<html><body><form method=\"POST\" action=\"/resource/directory/locations/{id}\">Edit a location</form></body></html>"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/sublocations/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The sublocation id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Get a sublocation by id.",
+        "operationId": "get_sublocation",
+        "responses": {
+          "200": {
+            "description": "The sublocation data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Sublocation"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Delete a sublocation by id.",
+        "operationId": "delete_sublocation",
+        "responses": {
+          "204": {
+            "description": "The sublocation has been deleted."
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "423": {
+            "description": "The sublocation is locked. Unlock to delete."
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Patch a sublocation by id.",
+        "operationId": "patch_sublocation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "The Directory Sublocation fillable properties.",
+                "type": "object",
+                "properties": {
+                  "sublocation_type": {
+                    "description": "The sublocation type of this sublocation.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "owned_by_id": {
+                    "description": "Foreign key: links an owned by user to this sublocation.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "parent_id": {
+                    "description": "ID: a parent of this sublocation.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "location_id": {
+                    "description": "Foreign key: links a location to this sublocation.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "matrix_id": {
+                    "description": "Foreign key: links a matrix to this sublocation.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "canceled_at": {
+                    "description": "The canceled at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "closed_at": {
+                    "description": "The closed at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "embargo_at": {
+                    "description": "The embargo at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "fixed_at": {
+                    "description": "The fixed at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "planned_end_at": {
+                    "description": "The planned end at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "planned_start_at": {
+                    "description": "The planned start at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "postponed_at": {
+                    "description": "The postponed at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "published_at": {
+                    "description": "The published at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "released_at": {
+                    "description": "The released at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "resumed_at": {
+                    "description": "The resumed at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "resolved_at": {
+                    "description": "The resolved at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "suspended_at": {
+                    "description": "The suspended at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "timer_end_at": {
+                    "description": "The timer end at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "timer_start_at": {
+                    "description": "The timer start at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "gids": {
+                    "description": "Permissions: gids",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "po": {
+                    "description": "Permissions: po",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "pg": {
+                    "description": "Permissions: pg",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "pw": {
+                    "description": "Permissions: pw",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "only_admin": {
+                    "description": "Permissions: only admin",
+                    "type": "boolean"
+                  },
+                  "only_user": {
+                    "description": "Permissions: only user",
+                    "type": "boolean"
+                  },
+                  "only_guest": {
+                    "description": "Permissions: only guest",
+                    "type": "boolean"
+                  },
+                  "allow_public": {
+                    "description": "Permissions: allow public",
+                    "type": "boolean"
+                  },
+                  "status": {
+                    "description": "The status of the sublocation.",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "rank": {
+                    "description": "Status: rank",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "size": {
+                    "description": "Status: size",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "icon": {
+                    "description": "Ui: icon",
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "image": {
+                    "description": "Ui: image",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "avatar": {
+                    "description": "Ui: avatar",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "ui": {
+                    "description": "The ui of the sublocation.",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "active": {
+                    "description": "Flags: active",
+                    "type": "boolean"
+                  },
+                  "canceled": {
+                    "description": "Flags: canceled",
+                    "type": "boolean"
+                  },
+                  "closed": {
+                    "description": "Flags: closed",
+                    "type": "boolean"
+                  },
+                  "completed": {
+                    "description": "Flags: completed",
+                    "type": "boolean"
+                  },
+                  "cron": {
+                    "description": "Flags: cron",
+                    "type": "boolean"
+                  },
+                  "duplicate": {
+                    "description": "Flags: duplicate",
+                    "type": "boolean"
+                  },
+                  "fixed": {
+                    "description": "Flags: fixed",
+                    "type": "boolean"
+                  },
+                  "flagged": {
+                    "description": "Flags: flagged",
+                    "type": "boolean"
+                  },
+                  "internal": {
+                    "description": "Flags: internal",
+                    "type": "boolean"
+                  },
+                  "locked": {
+                    "description": "Flags: locked",
+                    "type": "boolean"
+                  },
+                  "pending": {
+                    "description": "Flags: pending",
+                    "type": "boolean"
+                  },
+                  "planned": {
+                    "description": "Flags: planned",
+                    "type": "boolean"
+                  },
+                  "prioritized": {
+                    "description": "Flags: prioritized",
+                    "type": "boolean"
+                  },
+                  "problem": {
+                    "description": "Flags: problem",
+                    "type": "boolean"
+                  },
+                  "published": {
+                    "description": "Flags: published",
+                    "type": "boolean"
+                  },
+                  "released": {
+                    "description": "Flags: released",
+                    "type": "boolean"
+                  },
+                  "resolved": {
+                    "description": "Flags: resolved",
+                    "type": "boolean"
+                  },
+                  "retired": {
+                    "description": "Flags: retired",
+                    "type": "boolean"
+                  },
+                  "sitemap": {
+                    "description": "Flags: sitemap",
+                    "type": "boolean"
+                  },
+                  "suspended": {
+                    "description": "Flags: suspended",
+                    "type": "boolean"
+                  },
+                  "unknown": {
+                    "description": "Flags: unknown",
+                    "type": "boolean"
+                  },
+                  "locale": {
+                    "description": "The locale of the sublocation.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "label": {
+                    "description": "The label of the sublocation.",
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "title": {
+                    "description": "The title of the sublocation.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "byline": {
+                    "description": "The byline of the sublocation.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "slug": {
+                    "description": "The slug of the sublocation.",
+                    "type": "string",
+                    "maxLength": 128,
+                    "nullable": true
+                  },
+                  "url": {
+                    "description": "The url of the sublocation.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "description": {
+                    "description": "The description of the sublocation.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "introduction": {
+                    "description": "The introduction of the sublocation.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "content": {
+                    "description": "The content of the sublocation. Allows HTML.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "summary": {
+                    "description": "The summary of the sublocation. Allows HTML.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "phone": {
+                    "description": "The phone of the sublocation.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "address": {
+                    "description": "JSON: address",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "assets": {
+                    "description": "JSON: assets",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "contact": {
+                    "description": "JSON: contact",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "meta": {
+                    "description": "JSON: meta",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "options": {
+                    "description": "JSON: options",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "sources": {
+                    "description": "JSON: sources",
+                    "type": "object",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The sublocation has been patched.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Sublocation"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "422": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "example": "The title field is required."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "423": {
+            "description": "The sublocation is locked. Unlock to patch."
+          }
+        }
+      }
+    },
+    "/resource/directory/sublocations": {
+      "get": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Get sublocations from the index.",
+        "operationId": "get_sublocations_index",
+        "responses": {
+          "200": {
+            "description": "Get the sublocations from the index.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Sublocation"
+                      }
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Create a sublocation.",
+        "operationId": "post_sublocation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "The Directory Sublocation fillable properties.",
+                "type": "object",
+                "properties": {
+                  "sublocation_type": {
+                    "description": "The sublocation type of this sublocation.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "owned_by_id": {
+                    "description": "Foreign key: links an owned by user to this sublocation.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "parent_id": {
+                    "description": "ID: a parent of this sublocation.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "location_id": {
+                    "description": "Foreign key: links a location to this sublocation.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "matrix_id": {
+                    "description": "Foreign key: links a matrix to this sublocation.",
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": true
+                  },
+                  "canceled_at": {
+                    "description": "The canceled at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "closed_at": {
+                    "description": "The closed at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "embargo_at": {
+                    "description": "The embargo at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "fixed_at": {
+                    "description": "The fixed at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "planned_end_at": {
+                    "description": "The planned end at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "planned_start_at": {
+                    "description": "The planned start at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "postponed_at": {
+                    "description": "The postponed at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "published_at": {
+                    "description": "The published at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "released_at": {
+                    "description": "The released at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "resumed_at": {
+                    "description": "The resumed at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "resolved_at": {
+                    "description": "The resolved at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "suspended_at": {
+                    "description": "The suspended at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "timer_end_at": {
+                    "description": "The timer end at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "timer_start_at": {
+                    "description": "The timer start at date for this sublocation.",
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "gids": {
+                    "description": "Permissions: gids",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "po": {
+                    "description": "Permissions: po",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "pg": {
+                    "description": "Permissions: pg",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "pw": {
+                    "description": "Permissions: pw",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "only_admin": {
+                    "description": "Permissions: only admin",
+                    "type": "boolean"
+                  },
+                  "only_user": {
+                    "description": "Permissions: only user",
+                    "type": "boolean"
+                  },
+                  "only_guest": {
+                    "description": "Permissions: only guest",
+                    "type": "boolean"
+                  },
+                  "allow_public": {
+                    "description": "Permissions: allow public",
+                    "type": "boolean"
+                  },
+                  "status": {
+                    "description": "The status of the sublocation.",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "rank": {
+                    "description": "Status: rank",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "size": {
+                    "description": "Status: size",
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "icon": {
+                    "description": "Ui: icon",
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "image": {
+                    "description": "Ui: image",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "avatar": {
+                    "description": "Ui: avatar",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "ui": {
+                    "description": "The ui of the sublocation.",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "active": {
+                    "description": "Flags: active",
+                    "type": "boolean"
+                  },
+                  "canceled": {
+                    "description": "Flags: canceled",
+                    "type": "boolean"
+                  },
+                  "closed": {
+                    "description": "Flags: closed",
+                    "type": "boolean"
+                  },
+                  "completed": {
+                    "description": "Flags: completed",
+                    "type": "boolean"
+                  },
+                  "cron": {
+                    "description": "Flags: cron",
+                    "type": "boolean"
+                  },
+                  "duplicate": {
+                    "description": "Flags: duplicate",
+                    "type": "boolean"
+                  },
+                  "fixed": {
+                    "description": "Flags: fixed",
+                    "type": "boolean"
+                  },
+                  "flagged": {
+                    "description": "Flags: flagged",
+                    "type": "boolean"
+                  },
+                  "internal": {
+                    "description": "Flags: internal",
+                    "type": "boolean"
+                  },
+                  "locked": {
+                    "description": "Flags: locked",
+                    "type": "boolean"
+                  },
+                  "pending": {
+                    "description": "Flags: pending",
+                    "type": "boolean"
+                  },
+                  "planned": {
+                    "description": "Flags: planned",
+                    "type": "boolean"
+                  },
+                  "prioritized": {
+                    "description": "Flags: prioritized",
+                    "type": "boolean"
+                  },
+                  "problem": {
+                    "description": "Flags: problem",
+                    "type": "boolean"
+                  },
+                  "published": {
+                    "description": "Flags: published",
+                    "type": "boolean"
+                  },
+                  "released": {
+                    "description": "Flags: released",
+                    "type": "boolean"
+                  },
+                  "resolved": {
+                    "description": "Flags: resolved",
+                    "type": "boolean"
+                  },
+                  "retired": {
+                    "description": "Flags: retired",
+                    "type": "boolean"
+                  },
+                  "sitemap": {
+                    "description": "Flags: sitemap",
+                    "type": "boolean"
+                  },
+                  "suspended": {
+                    "description": "Flags: suspended",
+                    "type": "boolean"
+                  },
+                  "unknown": {
+                    "description": "Flags: unknown",
+                    "type": "boolean"
+                  },
+                  "locale": {
+                    "description": "The locale of the sublocation.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "label": {
+                    "description": "The label of the sublocation.",
+                    "type": "string",
+                    "maxLength": 128
+                  },
+                  "title": {
+                    "description": "The title of the sublocation.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "byline": {
+                    "description": "The byline of the sublocation.",
+                    "type": "string",
+                    "maxLength": 255
+                  },
+                  "slug": {
+                    "description": "The slug of the sublocation.",
+                    "type": "string",
+                    "maxLength": 128,
+                    "nullable": true
+                  },
+                  "url": {
+                    "description": "The url of the sublocation.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "description": {
+                    "description": "The description of the sublocation.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "introduction": {
+                    "description": "The introduction of the sublocation.",
+                    "type": "string",
+                    "maxLength": 512
+                  },
+                  "content": {
+                    "description": "The content of the sublocation. Allows HTML.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "summary": {
+                    "description": "The summary of the sublocation. Allows HTML.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "phone": {
+                    "description": "The phone of the sublocation.",
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "address": {
+                    "description": "JSON: address",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "assets": {
+                    "description": "JSON: assets",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "contact": {
+                    "description": "JSON: contact",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "meta": {
+                    "description": "JSON: meta",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "options": {
+                    "description": "JSON: options",
+                    "type": "object",
+                    "nullable": true
+                  },
+                  "sources": {
+                    "description": "JSON: sources",
+                    "type": "object",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The created sublocation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Sublocation"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "422": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "errors": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "example": "The title field is required."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "423": {
+            "description": "The sublocation is locked. Unlock to patch."
+          }
+        }
+      }
+    },
+    "/resource/directory/sublocations/index": {
+      "post": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Get sublocations from the index using POST.",
+        "operationId": "post_sublocations_index",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "The Directory Sublocation index form.",
+                "type": "object",
+                "properties": {
+                  "perPage": {
+                    "description": "Specify the number of records to display per page for pagination.",
+                    "type": "integer",
+                    "example": 10
+                  },
+                  "page": {
+                    "description": "Select a page for pagination.",
+                    "type": "integer",
+                    "example": 1
+                  },
+                  "offset": {
+                    "description": "Select the zero-based index offset for pagination.",
+                    "type": "integer",
+                    "example": 0
+                  },
+                  "filter": {
+                    "description": "Filter options for the Sublocation.",
+                    "type": "object",
+                    "properties": {
+                      "trash": {
+                        "description": "Filter trash options",
+                        "type": "integer",
+                        "example": 1,
+                        "enum": [
+                          "with",
+                          "only",
+                          ""
+                        ]
+                      },
+                      "page_type": {
+                        "description": "The Sublocation type of this Sublocation.",
+                        "type": "integer",
+                        "example": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Get the sublocations from the index.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Sublocation"
+                      }
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/sublocations/lock/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The sublocation id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "delete": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Delete a sublocation by id.",
+        "operationId": "unlock_sublocation",
+        "responses": {
+          "204": {
+            "description": "The sublocation has been unlocked."
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Lock a sublocation by ID.",
+        "operationId": "lock_sublocation",
+        "responses": {
+          "200": {
+            "description": "The unlocked sublocation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Sublocation"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/sublocations/restore/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The sublocation id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "put": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Restore a sublocation from the trash by ID.",
+        "operationId": "restore_sublocation",
+        "responses": {
+          "200": {
+            "description": "The restored sublocation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Sublocation"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/sublocations/revision/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The sublocation revision id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Show a sublocation revision by ID.",
+        "operationId": "revision_sublocation",
+        "responses": {
+          "200": {
+            "description": "The sublocation revision.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/SublocationRevision"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Restore a sublocation Revision by ID.",
+        "operationId": "restore_revision_sublocation",
+        "responses": {
+          "200": {
+            "description": "The restored sublocation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Sublocation"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/sublocations/{id}/revisions": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The sublocation id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Get the revisions of a sublocation.",
+        "operationId": "revision_index_sublocation",
+        "responses": {
+          "200": {
+            "description": "The sublocation revisions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SublocationRevision"
+                      }
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/sublocations/create": {
+      "get": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Create a sublocation form.",
+        "operationId": "create_sublocation",
+        "responses": {
+          "200": {
+            "description": "The create sublocation information (JSON) or (HTML).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Sublocation"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": "<html><body><form method=\"POST\" action=\"/resource/directory/sublocations\">Create a sublocation</form></body></html>"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/resource/directory/sublocations/edit/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "description": "The sublocation id.",
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      ],
+      "get": {
+        "tags": [
+          "Sublocation"
+        ],
+        "summary": "Edit a sublocation form.",
+        "operationId": "edit_sublocation",
+        "responses": {
+          "200": {
+            "description": "The edit sublocation information (JSON) or (HTML).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Sublocation"
+                    },
+                    "meta": {
+                      "type": "object"
+                    }
+                  }
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "example": "<html><body><form method=\"POST\" action=\"/resource/directory/sublocations/{id}\">Edit a sublocation</form></body></html>"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Location": {
+        "description": "The Directory location model.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The primary key.",
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "location_type": {
+            "description": "The location type of this location.",
+            "type": "string",
+            "nullable": true
+          },
+          "created_by_id": {
+            "description": "Foreign key: links a created by user to this location.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "modified_by_id": {
+            "description": "Foreign key: links a modified by user to this location.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "owned_by_id": {
+            "description": "Foreign key: links an owned by user to this location.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "parent_id": {
+            "description": "ID: a parent of this location.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "matrix_id": {
+            "description": "Foreign key: links a matrix to this location.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "created_at": {
+            "description": "Denotes the date and time, the location was created.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "description": "Denotes the date and time, the location was last modified.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "deleted_at": {
+            "description": "Denotes the date and time, the location was put in the trash.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "canceled_at": {
+            "description": "The canceled at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "closed_at": {
+            "description": "The closed at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "embargo_at": {
+            "description": "The embargo at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fixed_at": {
+            "description": "The fixed at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "planned_end_at": {
+            "description": "The planned end at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "planned_start_at": {
+            "description": "The planned start at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "postponed_at": {
+            "description": "The postponed at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "published_at": {
+            "description": "The published at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "released_at": {
+            "description": "The released at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "resumed_at": {
+            "description": "The resumed at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "resolved_at": {
+            "description": "The resolved at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "suspended_at": {
+            "description": "The suspended at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timer_end_at": {
+            "description": "The timer end at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timer_start_at": {
+            "description": "The timer start at date for this location.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gids": {
+            "description": "Permissions: gids",
+            "type": "integer",
+            "format": "int64"
+          },
+          "po": {
+            "description": "Permissions: po",
+            "type": "integer",
+            "format": "int32"
+          },
+          "pg": {
+            "description": "Permissions: pg",
+            "type": "integer",
+            "format": "int32"
+          },
+          "pw": {
+            "description": "Permissions: pw",
+            "type": "integer",
+            "format": "int32"
+          },
+          "only_admin": {
+            "description": "Permissions: only admin",
+            "type": "boolean"
+          },
+          "only_user": {
+            "description": "Permissions: only user",
+            "type": "boolean"
+          },
+          "only_guest": {
+            "description": "Permissions: only guest",
+            "type": "boolean"
+          },
+          "allow_public": {
+            "description": "Permissions: allow public",
+            "type": "boolean"
+          },
+          "status": {
+            "description": "The status of the location.",
+            "type": "integer",
+            "format": "int64"
+          },
+          "rank": {
+            "description": "Status: rank",
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "description": "Status: size",
+            "type": "integer",
+            "format": "int64"
+          },
+          "revision": {
+            "description": "Status: revision",
+            "type": "integer",
+            "format": "int64"
+          },
+          "icon": {
+            "description": "Ui: icon",
+            "type": "string",
+            "maxLength": 128
+          },
+          "image": {
+            "description": "Ui: image",
+            "type": "string",
+            "maxLength": 512
+          },
+          "avatar": {
+            "description": "Ui: avatar",
+            "type": "string",
+            "maxLength": 512
+          },
+          "ui": {
+            "description": "The ui of the location.",
+            "type": "object",
+            "nullable": true
+          },
+          "active": {
+            "description": "Flags: active",
+            "type": "boolean"
+          },
+          "canceled": {
+            "description": "Flags: canceled",
+            "type": "boolean"
+          },
+          "closed": {
+            "description": "Flags: closed",
+            "type": "boolean"
+          },
+          "completed": {
+            "description": "Flags: completed",
+            "type": "boolean"
+          },
+          "cron": {
+            "description": "Flags: cron",
+            "type": "boolean"
+          },
+          "duplicate": {
+            "description": "Flags: duplicate",
+            "type": "boolean"
+          },
+          "fixed": {
+            "description": "Flags: fixed",
+            "type": "boolean"
+          },
+          "flagged": {
+            "description": "Flags: flagged",
+            "type": "boolean"
+          },
+          "internal": {
+            "description": "Flags: internal",
+            "type": "boolean"
+          },
+          "locked": {
+            "description": "Flags: locked",
+            "type": "boolean"
+          },
+          "pending": {
+            "description": "Flags: pending",
+            "type": "boolean"
+          },
+          "planned": {
+            "description": "Flags: planned",
+            "type": "boolean"
+          },
+          "prioritized": {
+            "description": "Flags: prioritized",
+            "type": "boolean"
+          },
+          "problem": {
+            "description": "Flags: problem",
+            "type": "boolean"
+          },
+          "published": {
+            "description": "Flags: published",
+            "type": "boolean"
+          },
+          "released": {
+            "description": "Flags: released",
+            "type": "boolean"
+          },
+          "resolved": {
+            "description": "Flags: resolved",
+            "type": "boolean"
+          },
+          "retired": {
+            "description": "Flags: retired",
+            "type": "boolean"
+          },
+          "sitemap": {
+            "description": "Flags: sitemap",
+            "type": "boolean"
+          },
+          "suspended": {
+            "description": "Flags: suspended",
+            "type": "boolean"
+          },
+          "unknown": {
+            "description": "Flags: unknown",
+            "type": "boolean"
+          },
+          "locale": {
+            "description": "The locale of the location.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "label": {
+            "description": "The label of the location.",
+            "type": "string",
+            "maxLength": 128
+          },
+          "title": {
+            "description": "The title of the location.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "byline": {
+            "description": "The byline of the location.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "slug": {
+            "description": "The slug of the location.",
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "url": {
+            "description": "The url of the location.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "description": {
+            "description": "The description of the location.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "introduction": {
+            "description": "The introduction of the location.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "content": {
+            "description": "The content of the location. Allows HTML.",
+            "type": "string",
+            "nullable": true
+          },
+          "summary": {
+            "description": "The summary of the location. Allows HTML.",
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "description": "The phone of the location.",
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "description": "JSON: address",
+            "type": "object",
+            "nullable": true
+          },
+          "assets": {
+            "description": "JSON: assets",
+            "type": "object",
+            "nullable": true
+          },
+          "contact": {
+            "description": "JSON: contact",
+            "type": "object",
+            "nullable": true
+          },
+          "meta": {
+            "description": "JSON: meta",
+            "type": "object",
+            "nullable": true
+          },
+          "notes": {
+            "description": "JSON: notes",
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "nullable": true
+          },
+          "options": {
+            "description": "JSON: options",
+            "type": "object",
+            "nullable": true
+          },
+          "sources": {
+            "description": "JSON: sources",
+            "type": "object",
+            "nullable": true
+          }
+        }
+      },
+      "LocationRevision": {
+        "description": "The Directory location revision model.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The primary key.",
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "location_type": {
+            "description": "The location type of this location revision.",
+            "type": "string",
+            "nullable": true
+          },
+          "created_by_id": {
+            "description": "Foreign key: links a created by user to this location revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "modified_by_id": {
+            "description": "Foreign key: links a modified by user to this location revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "owned_by_id": {
+            "description": "Foreign key: links an owned by user to this location revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "parent_id": {
+            "description": "ID: a parent of this location revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "location_id": {
+            "description": "Foreign key: links a location to this location revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "matrix_id": {
+            "description": "Foreign key: links a matrix to this location revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "created_at": {
+            "description": "Denotes the date and time, the location revision was created.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "description": "Denotes the date and time, the location revision was last modified.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "deleted_at": {
+            "description": "Denotes the date and time, the location revision was put in the trash.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "canceled_at": {
+            "description": "The canceled at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "closed_at": {
+            "description": "The closed at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "embargo_at": {
+            "description": "The embargo at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fixed_at": {
+            "description": "The fixed at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "planned_end_at": {
+            "description": "The planned end at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "planned_start_at": {
+            "description": "The planned start at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "postponed_at": {
+            "description": "The postponed at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "published_at": {
+            "description": "The published at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "released_at": {
+            "description": "The released at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "resumed_at": {
+            "description": "The resumed at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "resolved_at": {
+            "description": "The resolved at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "suspended_at": {
+            "description": "The suspended at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timer_end_at": {
+            "description": "The timer end at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timer_start_at": {
+            "description": "The timer start at date for this location revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gids": {
+            "description": "Permissions: gids",
+            "type": "integer",
+            "format": "int64"
+          },
+          "po": {
+            "description": "Permissions: po",
+            "type": "integer",
+            "format": "int32"
+          },
+          "pg": {
+            "description": "Permissions: pg",
+            "type": "integer",
+            "format": "int32"
+          },
+          "pw": {
+            "description": "Permissions: pw",
+            "type": "integer",
+            "format": "int32"
+          },
+          "only_admin": {
+            "description": "Permissions: only admin",
+            "type": "boolean"
+          },
+          "only_user": {
+            "description": "Permissions: only user",
+            "type": "boolean"
+          },
+          "only_guest": {
+            "description": "Permissions: only guest",
+            "type": "boolean"
+          },
+          "allow_public": {
+            "description": "Permissions: allow public",
+            "type": "boolean"
+          },
+          "status": {
+            "description": "The status of the location revision.",
+            "type": "integer",
+            "format": "int64"
+          },
+          "rank": {
+            "description": "Status: rank",
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "description": "Status: size",
+            "type": "integer",
+            "format": "int64"
+          },
+          "revision": {
+            "description": "Status: revision",
+            "type": "integer",
+            "format": "int64"
+          },
+          "icon": {
+            "description": "Ui: icon",
+            "type": "string",
+            "maxLength": 128
+          },
+          "image": {
+            "description": "Ui: image",
+            "type": "string",
+            "maxLength": 512
+          },
+          "avatar": {
+            "description": "Ui: avatar",
+            "type": "string",
+            "maxLength": 512
+          },
+          "ui": {
+            "description": "The ui of the location revision.",
+            "type": "object",
+            "nullable": true
+          },
+          "active": {
+            "description": "Flags: active",
+            "type": "boolean"
+          },
+          "canceled": {
+            "description": "Flags: canceled",
+            "type": "boolean"
+          },
+          "closed": {
+            "description": "Flags: closed",
+            "type": "boolean"
+          },
+          "completed": {
+            "description": "Flags: completed",
+            "type": "boolean"
+          },
+          "cron": {
+            "description": "Flags: cron",
+            "type": "boolean"
+          },
+          "duplicate": {
+            "description": "Flags: duplicate",
+            "type": "boolean"
+          },
+          "fixed": {
+            "description": "Flags: fixed",
+            "type": "boolean"
+          },
+          "flagged": {
+            "description": "Flags: flagged",
+            "type": "boolean"
+          },
+          "internal": {
+            "description": "Flags: internal",
+            "type": "boolean"
+          },
+          "locked": {
+            "description": "Flags: locked",
+            "type": "boolean"
+          },
+          "pending": {
+            "description": "Flags: pending",
+            "type": "boolean"
+          },
+          "planned": {
+            "description": "Flags: planned",
+            "type": "boolean"
+          },
+          "prioritized": {
+            "description": "Flags: prioritized",
+            "type": "boolean"
+          },
+          "problem": {
+            "description": "Flags: problem",
+            "type": "boolean"
+          },
+          "published": {
+            "description": "Flags: published",
+            "type": "boolean"
+          },
+          "released": {
+            "description": "Flags: released",
+            "type": "boolean"
+          },
+          "resolved": {
+            "description": "Flags: resolved",
+            "type": "boolean"
+          },
+          "retired": {
+            "description": "Flags: retired",
+            "type": "boolean"
+          },
+          "sitemap": {
+            "description": "Flags: sitemap",
+            "type": "boolean"
+          },
+          "suspended": {
+            "description": "Flags: suspended",
+            "type": "boolean"
+          },
+          "unknown": {
+            "description": "Flags: unknown",
+            "type": "boolean"
+          },
+          "locale": {
+            "description": "The locale of the location revision.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "label": {
+            "description": "The label of the location revision.",
+            "type": "string",
+            "maxLength": 128
+          },
+          "title": {
+            "description": "The title of the location revision.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "byline": {
+            "description": "The byline of the location revision.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "slug": {
+            "description": "The slug of the location revision.",
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "url": {
+            "description": "The url of the location revision.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "description": {
+            "description": "The description of the location revision.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "introduction": {
+            "description": "The introduction of the location revision.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "content": {
+            "description": "The content of the location revision. Allows HTML.",
+            "type": "string",
+            "nullable": true
+          },
+          "summary": {
+            "description": "The summary of the location revision. Allows HTML.",
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "description": "The phone of the location revision.",
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "description": "JSON: address",
+            "type": "object",
+            "nullable": true
+          },
+          "assets": {
+            "description": "JSON: assets",
+            "type": "object",
+            "nullable": true
+          },
+          "contact": {
+            "description": "JSON: contact",
+            "type": "object",
+            "nullable": true
+          },
+          "meta": {
+            "description": "JSON: meta",
+            "type": "object",
+            "nullable": true
+          },
+          "notes": {
+            "description": "JSON: notes",
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "nullable": true
+          },
+          "options": {
+            "description": "JSON: options",
+            "type": "object",
+            "nullable": true
+          },
+          "sources": {
+            "description": "JSON: sources",
+            "type": "object",
+            "nullable": true
+          }
+        }
+      },
+      "Sublocation": {
+        "description": "The Directory sublocation model.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The primary key.",
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "sublocation_type": {
+            "description": "The sublocation type of this sublocation.",
+            "type": "string",
+            "nullable": true
+          },
+          "created_by_id": {
+            "description": "Foreign key: links a created by user to this sublocation.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "modified_by_id": {
+            "description": "Foreign key: links a modified by user to this sublocation.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "owned_by_id": {
+            "description": "Foreign key: links an owned by user to this sublocation.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "parent_id": {
+            "description": "ID: a parent of this sublocation.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "location_id": {
+            "description": "Foreign key: links a location to this sublocation.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "matrix_id": {
+            "description": "Foreign key: links a matrix to this sublocation.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "created_at": {
+            "description": "Denotes the date and time, the sublocation was created.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "description": "Denotes the date and time, the sublocation was last modified.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "deleted_at": {
+            "description": "Denotes the date and time, the sublocation was put in the trash.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "canceled_at": {
+            "description": "The canceled at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "closed_at": {
+            "description": "The closed at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "embargo_at": {
+            "description": "The embargo at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fixed_at": {
+            "description": "The fixed at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "planned_end_at": {
+            "description": "The planned end at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "planned_start_at": {
+            "description": "The planned start at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "postponed_at": {
+            "description": "The postponed at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "published_at": {
+            "description": "The published at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "released_at": {
+            "description": "The released at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "resumed_at": {
+            "description": "The resumed at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "resolved_at": {
+            "description": "The resolved at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "suspended_at": {
+            "description": "The suspended at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timer_end_at": {
+            "description": "The timer end at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timer_start_at": {
+            "description": "The timer start at date for this sublocation.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gids": {
+            "description": "Permissions: gids",
+            "type": "integer",
+            "format": "int64"
+          },
+          "po": {
+            "description": "Permissions: po",
+            "type": "integer",
+            "format": "int32"
+          },
+          "pg": {
+            "description": "Permissions: pg",
+            "type": "integer",
+            "format": "int32"
+          },
+          "pw": {
+            "description": "Permissions: pw",
+            "type": "integer",
+            "format": "int32"
+          },
+          "only_admin": {
+            "description": "Permissions: only admin",
+            "type": "boolean"
+          },
+          "only_user": {
+            "description": "Permissions: only user",
+            "type": "boolean"
+          },
+          "only_guest": {
+            "description": "Permissions: only guest",
+            "type": "boolean"
+          },
+          "allow_public": {
+            "description": "Permissions: allow public",
+            "type": "boolean"
+          },
+          "status": {
+            "description": "The status of the sublocation.",
+            "type": "integer",
+            "format": "int64"
+          },
+          "rank": {
+            "description": "Status: rank",
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "description": "Status: size",
+            "type": "integer",
+            "format": "int64"
+          },
+          "revision": {
+            "description": "Status: revision",
+            "type": "integer",
+            "format": "int64"
+          },
+          "icon": {
+            "description": "Ui: icon",
+            "type": "string",
+            "maxLength": 128
+          },
+          "image": {
+            "description": "Ui: image",
+            "type": "string",
+            "maxLength": 512
+          },
+          "avatar": {
+            "description": "Ui: avatar",
+            "type": "string",
+            "maxLength": 512
+          },
+          "ui": {
+            "description": "The ui of the sublocation.",
+            "type": "object",
+            "nullable": true
+          },
+          "active": {
+            "description": "Flags: active",
+            "type": "boolean"
+          },
+          "canceled": {
+            "description": "Flags: canceled",
+            "type": "boolean"
+          },
+          "closed": {
+            "description": "Flags: closed",
+            "type": "boolean"
+          },
+          "completed": {
+            "description": "Flags: completed",
+            "type": "boolean"
+          },
+          "cron": {
+            "description": "Flags: cron",
+            "type": "boolean"
+          },
+          "duplicate": {
+            "description": "Flags: duplicate",
+            "type": "boolean"
+          },
+          "fixed": {
+            "description": "Flags: fixed",
+            "type": "boolean"
+          },
+          "flagged": {
+            "description": "Flags: flagged",
+            "type": "boolean"
+          },
+          "internal": {
+            "description": "Flags: internal",
+            "type": "boolean"
+          },
+          "locked": {
+            "description": "Flags: locked",
+            "type": "boolean"
+          },
+          "pending": {
+            "description": "Flags: pending",
+            "type": "boolean"
+          },
+          "planned": {
+            "description": "Flags: planned",
+            "type": "boolean"
+          },
+          "prioritized": {
+            "description": "Flags: prioritized",
+            "type": "boolean"
+          },
+          "problem": {
+            "description": "Flags: problem",
+            "type": "boolean"
+          },
+          "published": {
+            "description": "Flags: published",
+            "type": "boolean"
+          },
+          "released": {
+            "description": "Flags: released",
+            "type": "boolean"
+          },
+          "resolved": {
+            "description": "Flags: resolved",
+            "type": "boolean"
+          },
+          "retired": {
+            "description": "Flags: retired",
+            "type": "boolean"
+          },
+          "sitemap": {
+            "description": "Flags: sitemap",
+            "type": "boolean"
+          },
+          "suspended": {
+            "description": "Flags: suspended",
+            "type": "boolean"
+          },
+          "unknown": {
+            "description": "Flags: unknown",
+            "type": "boolean"
+          },
+          "locale": {
+            "description": "The locale of the sublocation.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "label": {
+            "description": "The label of the sublocation.",
+            "type": "string",
+            "maxLength": 128
+          },
+          "title": {
+            "description": "The title of the sublocation.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "byline": {
+            "description": "The byline of the sublocation.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "slug": {
+            "description": "The slug of the sublocation.",
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "url": {
+            "description": "The url of the sublocation.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "description": {
+            "description": "The description of the sublocation.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "introduction": {
+            "description": "The introduction of the sublocation.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "content": {
+            "description": "The content of the sublocation. Allows HTML.",
+            "type": "string",
+            "nullable": true
+          },
+          "summary": {
+            "description": "The summary of the sublocation. Allows HTML.",
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "description": "The phone of the sublocation.",
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "description": "JSON: address",
+            "type": "object",
+            "nullable": true
+          },
+          "assets": {
+            "description": "JSON: assets",
+            "type": "object",
+            "nullable": true
+          },
+          "contact": {
+            "description": "JSON: contact",
+            "type": "object",
+            "nullable": true
+          },
+          "meta": {
+            "description": "JSON: meta",
+            "type": "object",
+            "nullable": true
+          },
+          "notes": {
+            "description": "JSON: notes",
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "nullable": true
+          },
+          "options": {
+            "description": "JSON: options",
+            "type": "object",
+            "nullable": true
+          },
+          "sources": {
+            "description": "JSON: sources",
+            "type": "object",
+            "nullable": true
+          }
+        }
+      },
+      "SublocationRevision": {
+        "description": "The Directory sublocation revision model.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The primary key.",
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "sublocation_type": {
+            "description": "The sublocation type of this sublocation revision.",
+            "type": "string",
+            "nullable": true
+          },
+          "created_by_id": {
+            "description": "Foreign key: links a created by user to this sublocation revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "modified_by_id": {
+            "description": "Foreign key: links a modified by user to this sublocation revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "owned_by_id": {
+            "description": "Foreign key: links an owned by user to this sublocation revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "parent_id": {
+            "description": "ID: a parent of this sublocation revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "sublocation_id": {
+            "description": "Foreign key: links a sublocation to this sublocation revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "location_id": {
+            "description": "Foreign key: links a location to this sublocation revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "matrix_id": {
+            "description": "Foreign key: links a matrix to this sublocation revision.",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "created_at": {
+            "description": "Denotes the date and time, the sublocation revision was created.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "updated_at": {
+            "description": "Denotes the date and time, the sublocation revision was last modified.",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "deleted_at": {
+            "description": "Denotes the date and time, the sublocation revision was put in the trash.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "canceled_at": {
+            "description": "The canceled at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "closed_at": {
+            "description": "The closed at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "embargo_at": {
+            "description": "The embargo at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fixed_at": {
+            "description": "The fixed at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "planned_end_at": {
+            "description": "The planned end at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "planned_start_at": {
+            "description": "The planned start at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "postponed_at": {
+            "description": "The postponed at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "published_at": {
+            "description": "The published at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "released_at": {
+            "description": "The released at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "resumed_at": {
+            "description": "The resumed at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "resolved_at": {
+            "description": "The resolved at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "suspended_at": {
+            "description": "The suspended at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timer_end_at": {
+            "description": "The timer end at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timer_start_at": {
+            "description": "The timer start at date for this sublocation revision.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gids": {
+            "description": "Permissions: gids",
+            "type": "integer",
+            "format": "int64"
+          },
+          "po": {
+            "description": "Permissions: po",
+            "type": "integer",
+            "format": "int32"
+          },
+          "pg": {
+            "description": "Permissions: pg",
+            "type": "integer",
+            "format": "int32"
+          },
+          "pw": {
+            "description": "Permissions: pw",
+            "type": "integer",
+            "format": "int32"
+          },
+          "only_admin": {
+            "description": "Permissions: only admin",
+            "type": "boolean"
+          },
+          "only_user": {
+            "description": "Permissions: only user",
+            "type": "boolean"
+          },
+          "only_guest": {
+            "description": "Permissions: only guest",
+            "type": "boolean"
+          },
+          "allow_public": {
+            "description": "Permissions: allow public",
+            "type": "boolean"
+          },
+          "status": {
+            "description": "The status of the sublocation revision.",
+            "type": "integer",
+            "format": "int64"
+          },
+          "rank": {
+            "description": "Status: rank",
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "description": "Status: size",
+            "type": "integer",
+            "format": "int64"
+          },
+          "revision": {
+            "description": "Status: revision",
+            "type": "integer",
+            "format": "int64"
+          },
+          "icon": {
+            "description": "Ui: icon",
+            "type": "string",
+            "maxLength": 128
+          },
+          "image": {
+            "description": "Ui: image",
+            "type": "string",
+            "maxLength": 512
+          },
+          "avatar": {
+            "description": "Ui: avatar",
+            "type": "string",
+            "maxLength": 512
+          },
+          "ui": {
+            "description": "The ui of the sublocation revision.",
+            "type": "object",
+            "nullable": true
+          },
+          "active": {
+            "description": "Flags: active",
+            "type": "boolean"
+          },
+          "canceled": {
+            "description": "Flags: canceled",
+            "type": "boolean"
+          },
+          "closed": {
+            "description": "Flags: closed",
+            "type": "boolean"
+          },
+          "completed": {
+            "description": "Flags: completed",
+            "type": "boolean"
+          },
+          "cron": {
+            "description": "Flags: cron",
+            "type": "boolean"
+          },
+          "duplicate": {
+            "description": "Flags: duplicate",
+            "type": "boolean"
+          },
+          "fixed": {
+            "description": "Flags: fixed",
+            "type": "boolean"
+          },
+          "flagged": {
+            "description": "Flags: flagged",
+            "type": "boolean"
+          },
+          "internal": {
+            "description": "Flags: internal",
+            "type": "boolean"
+          },
+          "locked": {
+            "description": "Flags: locked",
+            "type": "boolean"
+          },
+          "pending": {
+            "description": "Flags: pending",
+            "type": "boolean"
+          },
+          "planned": {
+            "description": "Flags: planned",
+            "type": "boolean"
+          },
+          "prioritized": {
+            "description": "Flags: prioritized",
+            "type": "boolean"
+          },
+          "problem": {
+            "description": "Flags: problem",
+            "type": "boolean"
+          },
+          "published": {
+            "description": "Flags: published",
+            "type": "boolean"
+          },
+          "released": {
+            "description": "Flags: released",
+            "type": "boolean"
+          },
+          "resolved": {
+            "description": "Flags: resolved",
+            "type": "boolean"
+          },
+          "retired": {
+            "description": "Flags: retired",
+            "type": "boolean"
+          },
+          "sitemap": {
+            "description": "Flags: sitemap",
+            "type": "boolean"
+          },
+          "suspended": {
+            "description": "Flags: suspended",
+            "type": "boolean"
+          },
+          "unknown": {
+            "description": "Flags: unknown",
+            "type": "boolean"
+          },
+          "locale": {
+            "description": "The locale of the sublocation revision.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "label": {
+            "description": "The label of the sublocation revision.",
+            "type": "string",
+            "maxLength": 128
+          },
+          "title": {
+            "description": "The title of the sublocation revision.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "byline": {
+            "description": "The byline of the sublocation revision.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "slug": {
+            "description": "The slug of the sublocation revision.",
+            "type": "string",
+            "maxLength": 128,
+            "nullable": true
+          },
+          "url": {
+            "description": "The url of the sublocation revision.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "description": {
+            "description": "The description of the sublocation revision.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "introduction": {
+            "description": "The introduction of the sublocation revision.",
+            "type": "string",
+            "maxLength": 512
+          },
+          "content": {
+            "description": "The content of the sublocation revision. Allows HTML.",
+            "type": "string",
+            "nullable": true
+          },
+          "summary": {
+            "description": "The summary of the sublocation revision. Allows HTML.",
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "description": "The phone of the sublocation revision.",
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "description": "JSON: address",
+            "type": "object",
+            "nullable": true
+          },
+          "assets": {
+            "description": "JSON: assets",
+            "type": "object",
+            "nullable": true
+          },
+          "contact": {
+            "description": "JSON: contact",
+            "type": "object",
+            "nullable": true
+          },
+          "meta": {
+            "description": "JSON: meta",
+            "type": "object",
+            "nullable": true
+          },
+          "notes": {
+            "description": "JSON: notes",
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "nullable": true
+          },
+          "options": {
+            "description": "JSON: options",
+            "type": "object",
+            "nullable": true
+          },
+          "sources": {
+            "description": "JSON: sources",
+            "type": "object",
+            "nullable": true
+          }
+        }
+      }
+    }
+  }
+}

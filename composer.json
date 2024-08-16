@@ -1,0 +1,68 @@
+{
+    "name": "gammamatrix/playground-directory-resource",
+    "description": "Playground: Provides an API and a Blade UI for interacting with Playground Directory, a Directory System for Laravel applications.",
+    "keywords": [
+        "directory",
+        "gammamatrix",
+        "laravel",
+        "playground",
+        "playground-blade"
+    ],
+    "homepage": "https://github.com/gammamatrix/playground-directory-resource",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeremy Postlethwaite",
+            "email": "jeremy.postlethwaite@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "gammamatrix/playground": "*",
+        "gammamatrix/playground-auth": "*",
+        "gammamatrix/playground-http": "*",
+        "gammamatrix/playground-directory": "*"
+    },
+    "require-dev": {
+        "gammamatrix/playground-test": "*",
+        "gammamatrix/playground-login-blade": "*",
+        "gammamatrix/playground-site-blade": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Playground\\Directory\\Resource\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Feature\\Playground\\Directory\\Resource\\": "tests/Feature/",
+            "Tests\\Unit\\Playground\\Directory\\Resource\\": "tests/Unit/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": {
+            "gammamatrix/*": "source",
+            "*": "dist"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "73.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Playground\\Directory\\Resource\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse --verbose --debug --level max",
+        "cloc": "cloc --exclude-dir=node_modules,output,vendor .",
+        "format": "vendor/bin/php-cs-fixer fix",
+        "test": "vendor/bin/testbench package:test"
+    }
+}

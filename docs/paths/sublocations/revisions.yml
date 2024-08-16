@@ -1,0 +1,32 @@
+parameters:
+  -
+    in: path
+    name: id
+    required: true
+    description: 'The sublocation id.'
+    schema:
+      type: string
+      format: uuid
+get:
+  tags:
+    - Sublocation
+  summary: 'Get the revisions of a sublocation.'
+  operationId: revision_index_sublocation
+  responses:
+    200:
+      description: 'The sublocation revisions.'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: ../../models/sublocation-revision.yml
+              meta:
+                type: object
+    401:
+      description: Unauthorized
+    403:
+      description: Forbidden

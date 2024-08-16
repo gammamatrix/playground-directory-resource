@@ -1,0 +1,75 @@
+openapi: 3.0.3
+info:
+  title: 'Playground Directory Resource'
+  description: 'Playground: Provides an API and a Blade UI for interacting with Playground Directory, a Directory System for Laravel applications.'
+  version: 73.0.0
+externalDocs:
+  url: 'https://gammamatrix-playground.readthedocs.io/en/develop/components/directory.html'
+  description: 'Read the Docs: Playground Directory Packages'
+servers:
+  -
+    url: 'https://api.example.com'
+    description: 'Production Server'
+  -
+    url: 'https://api.staging.example.com'
+    description: 'Staging Server'
+  -
+    url: 'https://api.dev.example.com'
+    description: 'Dev Server'
+  -
+    url: 'http://localhost'
+    description: 'Local Server'
+tags:
+  -
+    name: Location
+    description: 'Manage locations in storage.'
+  -
+    name: Sublocation
+    description: 'Manage sublocations in storage.'
+paths:
+  '/resource/directory/locations/{id}':
+    $ref: paths/locations/id.yml
+  /resource/directory/locations:
+    $ref: paths/locations/index.yml
+  /resource/directory/locations/index:
+    $ref: paths/locations/index-form.yml
+  '/resource/directory/locations/lock/{id}':
+    $ref: paths/locations/lock.yml
+  '/resource/directory/locations/restore/{id}':
+    $ref: paths/locations/restore.yml
+  '/resource/directory/locations/revision/{id}':
+    $ref: paths/locations/revision.yml
+  '/resource/directory/locations/{id}/revisions':
+    $ref: paths/locations/revisions.yml
+  /resource/directory/locations/create:
+    $ref: paths/locations/create.yml
+  '/resource/directory/locations/edit/{id}':
+    $ref: paths/locations/edit.yml
+  '/resource/directory/sublocations/{id}':
+    $ref: paths/sublocations/id.yml
+  /resource/directory/sublocations:
+    $ref: paths/sublocations/index.yml
+  /resource/directory/sublocations/index:
+    $ref: paths/sublocations/index-form.yml
+  '/resource/directory/sublocations/lock/{id}':
+    $ref: paths/sublocations/lock.yml
+  '/resource/directory/sublocations/restore/{id}':
+    $ref: paths/sublocations/restore.yml
+  '/resource/directory/sublocations/revision/{id}':
+    $ref: paths/sublocations/revision.yml
+  '/resource/directory/sublocations/{id}/revisions':
+    $ref: paths/sublocations/revisions.yml
+  /resource/directory/sublocations/create:
+    $ref: paths/sublocations/create.yml
+  '/resource/directory/sublocations/edit/{id}':
+    $ref: paths/sublocations/edit.yml
+components:
+  schemas:
+    Location:
+      $ref: models/location.yml
+    LocationRevision:
+      $ref: models/location-revision.yml
+    Sublocation:
+      $ref: models/sublocation.yml
+    SublocationRevision:
+      $ref: models/sublocation-revision.yml

@@ -1,0 +1,51 @@
+parameters:
+  -
+    in: path
+    name: id
+    required: true
+    description: 'The sublocation revision id.'
+    schema:
+      type: string
+      format: uuid
+get:
+  tags:
+    - Sublocation
+  summary: 'Show a sublocation revision by ID.'
+  operationId: revision_sublocation
+  responses:
+    200:
+      description: 'The sublocation revision.'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: ../../models/sublocation-revision.yml
+              meta:
+                type: object
+    401:
+      description: Unauthorized
+    403:
+      description: Forbidden
+put:
+  tags:
+    - Sublocation
+  summary: 'Restore a sublocation Revision by ID.'
+  operationId: restore_revision_sublocation
+  responses:
+    200:
+      description: 'The restored sublocation.'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: ../../models/sublocation.yml
+              meta:
+                type: object
+    401:
+      description: Unauthorized
+    403:
+      description: Forbidden
