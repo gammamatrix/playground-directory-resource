@@ -1,0 +1,23 @@
+{
+    "class": "CreateRequestTest",
+    "config": "playground-directory-resource",
+    "extends": "RequestCase",
+    "fqdn": "Tests/Unit/Playground/Directory/Resource/CreateRequestTest",
+    "model": "Sublocation",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "CreateRequestTest",
+    "namespace": "Tests/Unit/Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "playground": true,
+    "suite": "unit",
+    "type": "playground-request-model",
+    "uses": [
+        "Tests/Unit/Playground/Directory/Resource/PackageProviders",
+        "Playground/Test/Unit/Http/Requests/RequestCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

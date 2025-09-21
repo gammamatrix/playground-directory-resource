@@ -1,0 +1,23 @@
+{
+    "class": "RequestTestCase",
+    "config": "playground-directory-resource",
+    "extends": "RequestCase",
+    "fqdn": "Tests/Unit/Playground/Directory/Resource/Http/Requests/RequestTestCase",
+    "model": "",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "RequestTestCase",
+    "namespace": "Tests/Unit/Playground/Directory/Resource/Http/Requests",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "playground": true,
+    "suite": "unit",
+    "type": "playground-request-test-case",
+    "uses": [
+        "Tests/Unit/Playground/Directory/Resource/PackageProviders",
+        "Playground/Test/Unit/Http/Requests/RequestCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

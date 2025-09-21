@@ -1,0 +1,23 @@
+{
+    "class": "TestCase",
+    "config": "playground-directory-resource",
+    "extends": "OrchestraTestCase",
+    "fqdn": "Tests/Feature/Playground/Directory/Resource/TestCase",
+    "model": "",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "TestCase",
+    "namespace": "Tests/Feature/Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "playground": true,
+    "suite": "feature",
+    "type": "playground-resource-test-case",
+    "uses": [
+        "Tests/Unit/Playground/Directory/Resource/PackageProviders",
+        "Playground/Test/OrchestraTestCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

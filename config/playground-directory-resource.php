@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Playground
  */
@@ -7,6 +8,53 @@ declare(strict_types=1);
 
 /**
  * Playground: Directory Resource Configuration and Environment Variables
+ *
+ * @return array{
+ *       about: bool,
+ *       layout: string,
+ *       load: array{
+ *           policies: bool,
+ *           routes: bool,
+ *           translations: bool,
+ *           views: bool
+ *       },
+ *       middleware: array{
+ *           default: string|string[],
+ *           auth: string|string[],
+ *           guest: string|string[]
+ *       },
+ *       policies: array<
+ *           class-string<\Illuminate\Database\Eloquent\Model>,
+ *           class-string<\Playground\Auth\Policies\Policy>
+ *       >,
+ *       revisions: array{
+ *           options: bool,
+ *           locations: bool,
+ *           sublocations: bool,
+ *       },
+ *       routes: array{
+ *           directory: bool,
+ *           locations: bool,
+ *           sublocations: bool,
+ *       },
+ *       blade: string,
+ *       cache: array{
+ *           enable: bool,
+ *           location: bool,
+ *           location_store: string,
+ *           location_ttl: int,
+ *           sublocation: bool,
+ *           sublocation_store: string,
+ *           sublocation_ttl: int,
+ *       },
+ *       abilities: array<string, string[]>,
+ *       sitemap: array{
+ *            enable: bool,
+ *            guest: bool,
+ *            user: bool,
+ *            view: string
+ *       }
+ *   }
  */
 return [
 
@@ -77,7 +125,7 @@ return [
     */
 
     'revisions' => [
-        'optional' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_OPTIONAL', false),
+        'optional' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_REVISIONS_OPTIONAL', false),
         'locations' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_REVISIONS_LOCATIONS', true),
         'sublocations' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_REVISIONS_SUBLOCATIONS', true),
     ],
@@ -91,9 +139,9 @@ return [
     */
 
     'routes' => [
-        'directory' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_DIRECTORY', true),
-        'locations' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_LOCATIONS', true),
-        'sublocations' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_SUBLOCATIONS', true),
+        'directory' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_DIRECTORY', true),
+        'locations' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_LOCATIONS', true),
+        'sublocations' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_SUBLOCATIONS', true),
     ],
 
     /*

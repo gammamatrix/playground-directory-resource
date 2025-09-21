@@ -1,0 +1,36 @@
+{
+    "class": "SublocationPolicy",
+    "config": "playground-directory-resource",
+    "fqdn": "Playground/Directory/Resource/Policies/Sublocation",
+    "model": "Sublocation",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "Sublocation",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "withTests": true,
+    "playground": false,
+    "models": [],
+    "uses": [
+        "Playground/Directory/Models/Sublocation",
+        "Playground/Directory/Models/SublocationRevision",
+        "Illuminate\\Auth\\Access\\Response",
+        "Illuminate\\Contracts\\Auth\\Authenticatable"
+    ],
+    "rolesForAction": [
+        "publisher",
+        "manager",
+        "admin",
+        "root"
+    ],
+    "rolesToView": [
+        "user",
+        "staff",
+        "publisher",
+        "manager",
+        "admin",
+        "root"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "class": "InstanceTest",
+    "config": "playground-directory-resource",
+    "extends": "RequestCase",
+    "fqdn": "Tests/Feature/Playground/Directory/Resource/InstanceTest",
+    "model": "",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "FormRequestRequestTest",
+    "namespace": "Tests/Feature/Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "playground": true,
+    "suite": "feature",
+    "type": "playground-request-form",
+    "uses": [
+        "Tests/Unit/Playground/Directory/Resource/PackageProviders",
+        "Playground/Test/Unit/Http/Requests/RequestCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

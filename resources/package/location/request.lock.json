@@ -1,0 +1,22 @@
+{
+    "class": "LockRequest",
+    "config": "playground-directory-resource",
+    "fqdn": "Playground/Directory/Resource/Http/Requests/Location/Location",
+    "model": "Location",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "Location",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "abstract": false,
+    "pagination": false,
+    "playground": false,
+    "store": false,
+    "slug": false,
+    "type": "lock",
+    "extends": "FormRequest",
+    "extends_use": "Playground/Directory/Resource/Http/Requests/FormRequest",
+    "models": []
+}

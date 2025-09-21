@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Playground
  */
 
 declare(strict_types=1);
+
 namespace Playground\Directory\Resource\Http\Requests\Sublocation;
 
 use Playground\Http\Requests\UpdateRequest as BaseUpdateRequest;
@@ -81,7 +83,7 @@ class UpdateRequest extends BaseUpdateRequest
         'unknown' => ['boolean'],
         'locale' => ['string'],
         'label' => ['string'],
-        'title' => ['string', 'required'],
+        'title' => ['string'],
         'byline' => ['string'],
         'slug' => ['nullable', 'string'],
         'url' => ['string'],
@@ -108,7 +110,7 @@ class UpdateRequest extends BaseUpdateRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, mixed>
      */
     public function rules(): array
     {

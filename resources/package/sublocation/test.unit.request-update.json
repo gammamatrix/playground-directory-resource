@@ -1,0 +1,23 @@
+{
+    "class": "UpdateRequestTest",
+    "config": "playground-directory-resource",
+    "extends": "RequestCase",
+    "fqdn": "Tests/Unit/Playground/Directory/Resource/UpdateRequestTest",
+    "model": "Sublocation",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "UpdateRequestTest",
+    "namespace": "Tests/Unit/Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "playground": true,
+    "suite": "unit",
+    "type": "playground-request-model-update",
+    "uses": [
+        "Tests/Unit/Playground/Directory/Resource/PackageProviders",
+        "Playground/Test/Unit/Http/Requests/RequestCase"
+    ],
+    "models": [],
+    "package_providers": []
+}

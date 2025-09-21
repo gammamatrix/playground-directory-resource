@@ -1,0 +1,17 @@
+{
+    "class": "SublocationRevisionCollection",
+    "config": "playground-directory-resource",
+    "fqdn": "Playground/Directory/Resource/Http/Resources/SublocationRevisionCollection",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "SublocationRevisionCollection",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "collection": true,
+    "model": "SublocationRevision",
+    "model_fqdn": "Playground/Directory/Models/SublocationRevision",
+    "model_slug": "sublocation-revision",
+    "type": "",
+    "models": []
+}

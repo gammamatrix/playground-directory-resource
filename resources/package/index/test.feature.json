@@ -1,0 +1,20 @@
+{
+    "class": "IndexRouteTest",
+    "config": "playground-directory-resource",
+    "extends": "",
+    "fqdn": "Tests/Feature/Playground/Directory/Resource/IndexRouteTest",
+    "model": "Location",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "IndexRouteTest",
+    "namespace": "Tests/Feature/Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "playground": true,
+    "suite": "feature",
+    "type": "playground-resource-index",
+    "uses": [],
+    "models": [],
+    "package_providers": []
+}

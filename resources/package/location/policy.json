@@ -1,0 +1,36 @@
+{
+    "class": "LocationPolicy",
+    "config": "playground-directory-resource",
+    "fqdn": "Playground/Directory/Resource/Policies/Location",
+    "model": "Location",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "Location",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "withTests": true,
+    "playground": false,
+    "models": [],
+    "uses": [
+        "Playground/Directory/Models/Location",
+        "Playground/Directory/Models/LocationRevision",
+        "Illuminate\\Auth\\Access\\Response",
+        "Illuminate\\Contracts\\Auth\\Authenticatable"
+    ],
+    "rolesForAction": [
+        "publisher",
+        "manager",
+        "admin",
+        "root"
+    ],
+    "rolesToView": [
+        "user",
+        "staff",
+        "publisher",
+        "manager",
+        "admin",
+        "root"
+    ]
+}

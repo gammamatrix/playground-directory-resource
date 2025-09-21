@@ -1,0 +1,22 @@
+{
+    "class": "LocationRouteTest",
+    "config": "playground-directory-resource",
+    "extends": "",
+    "fqdn": "Tests/Feature/Playground/Directory/Resource/LocationRouteTest",
+    "model": "Location",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "LocationRouteTest",
+    "namespace": "Tests/Feature/Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "playground": true,
+    "suite": "feature",
+    "type": "playground-resource-controller-model-user",
+    "uses": [],
+    "models": {
+        "Location": "resources/configurations/playground-directory/model.location.json"
+    },
+    "package_providers": []
+}

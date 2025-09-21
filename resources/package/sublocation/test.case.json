@@ -1,0 +1,22 @@
+{
+    "class": "SublocationTestCase",
+    "config": "playground-directory-resource",
+    "extends": "TestCase",
+    "fqdn": "Tests/Feature/Playground/Directory/Resource/Http/Controllers/SublocationTestCase",
+    "model": "Sublocation",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "SublocationTestCase",
+    "namespace": "Tests/Feature/Playground/Directory/Resource/Http/Controllers",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "playground": true,
+    "suite": "feature",
+    "type": "playground-resource-controller-model-case",
+    "uses": [],
+    "models": {
+        "Sublocation": "resources/configurations/playground-directory/model.sublocation.json"
+    },
+    "package_providers": []
+}

@@ -1,0 +1,22 @@
+{
+    "class": "StoreRequest",
+    "config": "playground-directory-resource",
+    "fqdn": "Playground/Directory/Resource/Http/Requests/Sublocation/Sublocation",
+    "model": "Sublocation",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "Sublocation",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "abstract": false,
+    "pagination": false,
+    "playground": false,
+    "store": false,
+    "slug": false,
+    "type": "store",
+    "extends": "BaseStoreRequest",
+    "extends_use": "Playground/Http/Requests/StoreRequest as BaseStoreRequest",
+    "models": []
+}

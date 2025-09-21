@@ -1,0 +1,22 @@
+{
+    "class": "sublocation/index.blade",
+    "config": "playground-directory-resource",
+    "fqdn": "sublocation/index.blade",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "Sublocation",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "extends": "playground::layouts.resource",
+    "folder": "sublocation",
+    "model": "Sublocation",
+    "model_column": "sublocation",
+    "model_label": "Sublocation",
+    "type": "playground-resource",
+    "route": "playground.directory.resource",
+    "title": "Sublocation",
+    "models": {
+        "Sublocation": "resources/configurations/playground-directory/model.sublocation.json"
+    }
+}

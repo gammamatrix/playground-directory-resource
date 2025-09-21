@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Playground
  */
 
 declare(strict_types=1);
+
 namespace Playground\Directory\Resource\Policies;
 
 use Illuminate\Auth\Access\Response;

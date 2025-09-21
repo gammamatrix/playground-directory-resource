@@ -1,0 +1,22 @@
+{
+    "class": "location/index.blade",
+    "config": "playground-directory-resource",
+    "fqdn": "location/index.blade",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "Location",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "extends": "playground::layouts.resource",
+    "folder": "location",
+    "model": "Location",
+    "model_column": "location",
+    "model_label": "Location",
+    "type": "playground-resource",
+    "route": "playground.directory.resource",
+    "title": "Location",
+    "models": {
+        "Location": "resources/configurations/playground-directory/model.location.json"
+    }
+}

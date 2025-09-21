@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Playground
  */
@@ -62,7 +63,7 @@ Route::group([
     Route::get('/{location}', [
         'as' => 'playground.directory.resource.locations.show',
         'uses' => 'LocationController@show',
-    ])->whereUuid('location')->can('detail', 'location');
+    ])->whereUuid('location')->can('detail', 'location')->withTrashed();
 
     Route::get('/{location}/revisions', [
         'as' => 'playground.directory.resource.locations.revisions',

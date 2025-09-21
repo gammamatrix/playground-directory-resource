@@ -1,0 +1,22 @@
+{
+    "class": "EditRequest",
+    "config": "playground-directory-resource",
+    "fqdn": "Playground/Directory/Resource/Http/Requests/Sublocation/Sublocation",
+    "model": "Sublocation",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "Sublocation",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "abstract": false,
+    "pagination": false,
+    "playground": false,
+    "store": false,
+    "slug": false,
+    "type": "edit",
+    "extends": "FormRequest",
+    "extends_use": "Playground/Directory/Resource/Http/Requests/FormRequest",
+    "models": []
+}

@@ -1,0 +1,20 @@
+{
+    "class": "InstanceTest",
+    "config": "playground-directory-resource",
+    "extends": "",
+    "fqdn": "Tests/Unit/Playground/Directory/Resource/ServiceProvider/InstanceTest",
+    "model": "",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "InstanceTest",
+    "namespace": "Tests/Unit/Playground/Directory/Resource/ServiceProvider",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "playground": true,
+    "suite": "unit",
+    "type": "playground-service-provider-policies",
+    "uses": [],
+    "models": [],
+    "package_providers": []
+}w

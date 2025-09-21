@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Playground
  */
 
 declare(strict_types=1);
+
 namespace Tests\Unit\Playground\Directory\Resource\Http\Requests\Sublocation;
 
 use Playground\Directory\Resource\Http\Requests\Sublocation\UpdateRequest;
@@ -16,7 +18,7 @@ class UpdateRequestTest extends RequestTestCase
 {
     protected string $requestClass = UpdateRequest::class;
 
-    public function test_UpdateRequest_rules_with_optional_revisions_disabled(): void
+    public function test_update_request_rules_with_optional_revisions_disabled(): void
     {
         config(['playground-directory-resource.revisions.optional' => false]);
         $instance = new UpdateRequest;
@@ -26,7 +28,7 @@ class UpdateRequestTest extends RequestTestCase
         $this->assertArrayNotHasKey('revision', $rules);
     }
 
-    public function test_UpdateRequest_rules_with_optional_revisions_enabled(): void
+    public function test_update_request_rules_with_optional_revisions_enabled(): void
     {
         config(['playground-directory-resource.revisions.optional' => true]);
         $instance = new UpdateRequest;

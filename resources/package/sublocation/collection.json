@@ -1,0 +1,17 @@
+{
+    "class": "SublocationCollection",
+    "config": "playground-directory-resource",
+    "fqdn": "Playground/Directory/Resource/Http/Resources/SublocationCollection",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "SublocationCollection",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "collection": true,
+    "model": "Sublocation",
+    "model_fqdn": "Playground/Directory/Models/Sublocation",
+    "model_slug": "sublocation",
+    "type": "",
+    "models": []
+}

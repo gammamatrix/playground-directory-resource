@@ -1,0 +1,23 @@
+{
+    "class": "PolicyTest",
+    "config": "playground-directory-resource",
+    "extends": "",
+    "fqdn": "Tests/Unit/Playground/Directory/Resource/Policies/SublocationPolicy/PolicyTest",
+    "model": "Sublocation",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "PolicyTest",
+    "namespace": "Tests/Unit/Playground/Directory/Resource/Policies/SublocationPolicy",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "playground": true,
+    "suite": "unit",
+    "type": "policy",
+    "uses": [
+        "Tests/Unit/Playground/Directory/Resource/TestCase",
+        "Playground/Directory/Resource/Policies/SublocationPolicy"
+    ],
+    "models": [],
+    "package_providers": []
+}

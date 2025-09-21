@@ -1,0 +1,17 @@
+{
+    "class": "Location",
+    "config": "playground-directory-resource",
+    "fqdn": "Playground/Directory/Resource/Http/Resources/Location",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "Location",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "collection": false,
+    "model": "Location",
+    "model_fqdn": "Playground/Directory/Models/Location",
+    "model_slug": "location",
+    "type": "",
+    "models": []
+}

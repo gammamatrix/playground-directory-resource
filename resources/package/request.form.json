@@ -1,0 +1,22 @@
+{
+    "class": "FormRequest",
+    "config": "playground-directory-resource",
+    "fqdn": "Playground/Directory/Resource/Http/Requests/FormRequest",
+    "model": "",
+    "model_fqdn": "",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "FormRequest",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "abstract": false,
+    "pagination": false,
+    "playground": false,
+    "store": false,
+    "slug": false,
+    "type": "form-request",
+    "extends": "FormRequest",
+    "extends_use": "Illuminate/Foundation/Http/FormRequest",
+    "models": []
+}
