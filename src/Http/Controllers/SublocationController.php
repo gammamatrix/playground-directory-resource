@@ -55,8 +55,6 @@ class SublocationController extends Controller
 
         $validated = $request->validated();
 
-        $user = $request->user();
-
         $sublocation = new Sublocation($validated);
 
         if ($request->expectsJson()) {
@@ -64,6 +62,8 @@ class SublocationController extends Controller
                 'info' => $packageInfo,
             ]])->response($request);
         }
+
+        $user = $request->user();
 
         $meta = [
             'session_user_id' => $user?->id,
@@ -111,13 +111,13 @@ class SublocationController extends Controller
 
         $validated = $request->validated();
 
-        $user = $request->user();
-
         if ($request->expectsJson()) {
             return new Resources\Sublocation($sublocation)->additional(['meta' => [
                 'info' => $packageInfo,
             ]])->response($request);
         }
+
+        $user = $request->user();
 
         $flash = $sublocation->toArray();
 
@@ -137,6 +137,10 @@ class SublocationController extends Controller
             'meta' => $meta,
             '_method' => 'patch',
         ];
+
+        if (! empty($validated['_return_url'])) {
+            $data['_return_url'] = $validated['_return_url'];
+        }
 
         session()->flashInput($flash);
 
@@ -240,8 +244,6 @@ class SublocationController extends Controller
 
         $packageInfo = $this->packageInfo();
 
-        $user = $request->user();
-
         /**
          * @var array{
          *     sort: string|array<mixed>,
@@ -291,6 +293,8 @@ class SublocationController extends Controller
             return new Resources\SublocationCollection($paginator)->response($request);
         }
 
+        $user = $request->user();
+
         $meta = [
             'session_user_id' => $user?->id,
             'columns' => $request->getPaginationColumns(),
@@ -333,9 +337,7 @@ class SublocationController extends Controller
 
         $user = $request->user();
 
-        if ($user?->id) {
-            $sublocation->modified_by_id = $user->id;
-        }
+        $sublocation->modified_by_id = $user?->id;
 
         $sublocation->restore();
 
@@ -459,6 +461,7 @@ class SublocationController extends Controller
         Sublocation $sublocation,
         Requests\Sublocation\RevisionsRequest $request
     ): JsonResponse|View|Resources\SublocationRevisionCollection {
+
         $packageInfo = $this->packageInfo();
 
         $user = $request->user();
@@ -586,8 +589,6 @@ class SublocationController extends Controller
             ]])->response($request);
         }
 
-        $validated = $request->validated();
-
         $user = $request->user();
 
         $meta = [
@@ -627,16 +628,14 @@ class SublocationController extends Controller
 
         $sublocation = new Sublocation($validated);
 
-        if ($user?->id) {
-            $sublocation->created_by_id = $user->id;
-        }
+        $sublocation->created_by_id = $user?->id;
 
         $sublocation->save();
 
         if ($request->expectsJson()) {
             return new Resources\Sublocation($sublocation)->additional(['meta' => [
                 'info' => $packageInfo,
-            ]])->response($request);
+            ]])->response($request)->setStatusCode(201);
         }
 
         $returnUrl = $validated['_return_url'] ?? '';
@@ -669,9 +668,7 @@ class SublocationController extends Controller
 
         $sublocation->locked = false;
 
-        if ($user?->id) {
-            $sublocation->modified_by_id = $user->id;
-        }
+        $sublocation->modified_by_id = $user?->id;
 
         $sublocation->save();
 
@@ -711,9 +708,7 @@ class SublocationController extends Controller
 
         $user = $request->user();
 
-        if ($user?->id) {
-            $sublocation->modified_by_id = $user->id;
-        }
+        $sublocation->modified_by_id = $user?->id;
 
         $sublocation->update($validated);
 

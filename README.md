@@ -1,4 +1,4 @@
-    # Playground: Directory Resource
+# Playground: Directory Resource
 
 [![Playground CI Workflow](https://github.com/gammamatrix/playground-directory-resource/actions/workflows/ci.yml/badge.svg?branch=develop)](https://raw.githubusercontent.com/gammamatrix/playground-directory-resource/testing/develop/testdox.txt)
 [![Test Coverage](https://raw.githubusercontent.com/gammamatrix/playground-directory-resource/testing/develop/coverage.svg)](tests)
@@ -67,7 +67,7 @@ You can publish the config file with:
 php artisan vendor:publish --provider="Playground\Directory\Resource\ServiceProvider" --tag="playground-config"
 ```
 
-All routes are enabled by default. They may be disabled via enviroment variable or the configuration.
+All routes are enabled by default. They may be disabled via environment variable or the configuration.
 
 See the contents of the published config file: [config/playground-directory-resource.php](config/playground-directory-resource.php)
 
@@ -98,21 +98,21 @@ composer cloc
 ➜  playground-directory-resource git:(develop) ✗ composer cloc
      239 text files.
      230 unique files.
-      52 files ignored.
+      94 files ignored.
 
-github.com/AlDanial/cloc v 2.06  T=0.08 s (2998.8 files/s, 410024.7 lines/s)
+github.com/AlDanial/cloc v 2.06  T=0.08 s (3008.8 files/s, 414287.9 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-JSON                            83              0              0          15170
+JSON                            83              0              0          15175
 YAML                            30              5              0           6422
-PHP                             83            997           1360           4101
+PHP                             83            999           1360           4089
 Blade                           18             91              0           2446
-XML                             12              0              7            649
-Markdown                         3             55              1            129
+XML                             12              0              7            863
+Markdown                         3             58              1            138
 INI                              1              3              0             12
 -------------------------------------------------------------------------------
-SUM:                           230           1151           1368          28929
+SUM:                           230           1156           1368          29145
 -------------------------------------------------------------------------------
 ```
 
@@ -133,8 +133,20 @@ composer analyse
 
 ## Coding Standards
 
+Format source code:
 ```sh
 composer format
+```
+
+Format blades in resources/views:
+
+```sh
+composer format-blade
+```
+- **NOTE:** requires installing dev packages from package.json.
+
+```sh
+npm install
 ```
 
 ## Testing
