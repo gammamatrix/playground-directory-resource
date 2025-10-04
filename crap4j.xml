@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2025-09-21 18:51:51</timestamp>
+  <timestamp>2025-10-04 05:06:31</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>62</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>222</totalCrap>
+    <totalCrap>216</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -50,8 +50,8 @@
       <methodName>edit</methodName>
       <methodSignature>edit(Location $location, Requests\Location\EditRequest $request): JsonResponse|View|Resources\Location</methodSignature>
       <fullMethod>edit(Location $location, Requests\Location\EditRequest $request): JsonResponse|View|Resources\Location</fullMethod>
-      <crap>3</crap>
-      <complexity>3</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -94,8 +94,8 @@
       <methodName>restore</methodName>
       <methodSignature>restore(Location $location, Requests\Location\RestoreRequest $request): JsonResponse|RedirectResponse|Resources\Location</methodSignature>
       <fullMethod>restore(Location $location, Requests\Location\RestoreRequest $request): JsonResponse|RedirectResponse|Resources\Location</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -160,8 +160,8 @@
       <methodName>store</methodName>
       <methodSignature>store(Requests\Location\StoreRequest $request): Response|JsonResponse|RedirectResponse|Resources\Location</methodSignature>
       <fullMethod>store(Requests\Location\StoreRequest $request): Response|JsonResponse|RedirectResponse|Resources\Location</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -171,8 +171,8 @@
       <methodName>unlock</methodName>
       <methodSignature>unlock(Location $location, Requests\Location\UnlockRequest $request): JsonResponse|RedirectResponse|Resources\Location</methodSignature>
       <fullMethod>unlock(Location $location, Requests\Location\UnlockRequest $request): JsonResponse|RedirectResponse|Resources\Location</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -182,8 +182,8 @@
       <methodName>update</methodName>
       <methodSignature>update(Location $location, Requests\Location\UpdateRequest $request): JsonResponse|RedirectResponse|Resources\Location</methodSignature>
       <fullMethod>update(Location $location, Requests\Location\UpdateRequest $request): JsonResponse|RedirectResponse|Resources\Location</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -204,8 +204,8 @@
       <methodName>edit</methodName>
       <methodSignature>edit(Sublocation $sublocation, Requests\Sublocation\EditRequest $request): JsonResponse|View|Resources\Sublocation</methodSignature>
       <fullMethod>edit(Sublocation $sublocation, Requests\Sublocation\EditRequest $request): JsonResponse|View|Resources\Sublocation</fullMethod>
-      <crap>3</crap>
-      <complexity>3</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -248,8 +248,8 @@
       <methodName>restore</methodName>
       <methodSignature>restore(Sublocation $sublocation, Requests\Sublocation\RestoreRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</methodSignature>
       <fullMethod>restore(Sublocation $sublocation, Requests\Sublocation\RestoreRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -314,8 +314,8 @@
       <methodName>store</methodName>
       <methodSignature>store(Requests\Sublocation\StoreRequest $request): Response|JsonResponse|RedirectResponse|Resources\Sublocation</methodSignature>
       <fullMethod>store(Requests\Sublocation\StoreRequest $request): Response|JsonResponse|RedirectResponse|Resources\Sublocation</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -325,8 +325,8 @@
       <methodName>unlock</methodName>
       <methodSignature>unlock(Sublocation $sublocation, Requests\Sublocation\UnlockRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</methodSignature>
       <fullMethod>unlock(Sublocation $sublocation, Requests\Sublocation\UnlockRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -336,8 +336,8 @@
       <methodName>update</methodName>
       <methodSignature>update(Sublocation $sublocation, Requests\Sublocation\UpdateRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</methodSignature>
       <fullMethod>update(Sublocation $sublocation, Requests\Sublocation\UpdateRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
