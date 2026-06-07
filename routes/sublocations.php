@@ -7,6 +7,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
+use Playground\Directory\Models\Sublocation;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,19 +37,19 @@ Route::group([
     Route::get('/', [
         'as' => 'playground.directory.resource.sublocations',
         'uses' => 'SublocationController@index',
-    ])->can('index', Playground\Directory\Models\Sublocation::class);
+    ])->can('index', Sublocation::class);
 
     Route::post('/index', [
         'as' => 'playground.directory.resource.sublocations.index',
         'uses' => 'SublocationController@index',
-    ])->can('index', Playground\Directory\Models\Sublocation::class);
+    ])->can('index', Sublocation::class);
 
     // UI
 
     Route::get('/create', [
         'as' => 'playground.directory.resource.sublocations.create',
         'uses' => 'SublocationController@create',
-    ])->can('create', Playground\Directory\Models\Sublocation::class);
+    ])->can('create', Sublocation::class);
 
     Route::get('/edit/{sublocation}', [
         'as' => 'playground.directory.resource.sublocations.edit',
@@ -109,7 +110,7 @@ Route::group([
     Route::post('/', [
         'as' => 'playground.directory.resource.sublocations.post',
         'uses' => 'SublocationController@store',
-    ])->can('store', Playground\Directory\Models\Sublocation::class);
+    ])->can('store', Sublocation::class);
 
     // Route::put('/', [
     //     'as' => 'playground.directory.resource.sublocations.put',

@@ -9,18 +9,20 @@ declare(strict_types=1);
 namespace Tests\Feature\Playground\Directory\Resource\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Model;
+use Playground\Directory\Models\Sublocation;
+use Playground\Directory\Models\SublocationRevision;
 
 /**
  * \Tests\Feature\Playground\Directory\Resource\Http\Controllers\SublocationTestCase
  */
 class SublocationTestCase extends TestCase
 {
-    public string $fqdn = \Playground\Directory\Models\Sublocation::class;
+    public string $fqdn = Sublocation::class;
 
     /**
      * @var class-string<Model>
      */
-    public string $fqdnRevision = \Playground\Directory\Models\SublocationRevision::class;
+    public string $fqdnRevision = SublocationRevision::class;
 
     public string $revisionId = 'sublocation_id';
 

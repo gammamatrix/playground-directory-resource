@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Playground\Directory\Resource\Http\Requests\Sublocation;
 
+use Playground\Directory\Resource\Http\Requests\Sublocation\ShowRequest;
 use Tests\Unit\Playground\Directory\Resource\Http\Requests\RequestTestCase;
 
 /**
@@ -15,5 +16,5 @@ use Tests\Unit\Playground\Directory\Resource\Http\Requests\RequestTestCase;
  */
 class ShowRequestTest extends RequestTestCase
 {
-    protected string $requestClass = \Playground\Directory\Resource\Http\Requests\Sublocation\ShowRequest::class;
+    protected string $requestClass = ShowRequest::class;
 }

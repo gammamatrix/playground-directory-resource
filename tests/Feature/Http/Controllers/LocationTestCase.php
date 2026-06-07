@@ -9,18 +9,20 @@ declare(strict_types=1);
 namespace Tests\Feature\Playground\Directory\Resource\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Model;
+use Playground\Directory\Models\Location;
+use Playground\Directory\Models\LocationRevision;
 
 /**
  * \Tests\Feature\Playground\Directory\Resource\Http\Controllers\LocationTestCase
  */
 class LocationTestCase extends TestCase
 {
-    public string $fqdn = \Playground\Directory\Models\Location::class;
+    public string $fqdn = Location::class;
 
     /**
      * @var class-string<Model>
      */
-    public string $fqdnRevision = \Playground\Directory\Models\LocationRevision::class;
+    public string $fqdnRevision = LocationRevision::class;
 
     public string $revisionId = 'location_id';
 

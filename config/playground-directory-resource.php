@@ -5,6 +5,14 @@
  */
 
 declare(strict_types=1);
+use Illuminate\Database\Eloquent\Model;
+use Playground\Auth\Policies\Policy;
+use Playground\Directory\Models\Location;
+use Playground\Directory\Models\LocationRevision;
+use Playground\Directory\Models\Sublocation;
+use Playground\Directory\Models\SublocationRevision;
+use Playground\Directory\Resource\Policies\LocationPolicy;
+use Playground\Directory\Resource\Policies\SublocationPolicy;
 
 /**
  * Playground: Directory Resource Configuration and Environment Variables
@@ -27,8 +35,8 @@ declare(strict_types=1);
  *           guest: string|string[]
  *       },
  *       policies: array<
- *           class-string<\Illuminate\Database\Eloquent\Model>,
- *           class-string<\Playground\Auth\Policies\Policy>
+ *           class-string<Model>,
+ *           class-string<Policy>
  *       >,
  *       revisions: array{
  *           options: bool,
@@ -125,10 +133,10 @@ return [
     */
 
     'policies' => [
-        Playground\Directory\Models\Location::class => Playground\Directory\Resource\Policies\LocationPolicy::class,
-        Playground\Directory\Models\LocationRevision::class => Playground\Directory\Resource\Policies\LocationPolicy::class,
-        Playground\Directory\Models\Sublocation::class => Playground\Directory\Resource\Policies\SublocationPolicy::class,
-        Playground\Directory\Models\SublocationRevision::class => Playground\Directory\Resource\Policies\SublocationPolicy::class,
+        Location::class => LocationPolicy::class,
+        LocationRevision::class => LocationPolicy::class,
+        Sublocation::class => SublocationPolicy::class,
+        SublocationRevision::class => SublocationPolicy::class,
     ],
 
     /*
