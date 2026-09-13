@@ -1,8 +1,8 @@
-@extends("playground::layouts.resource.layout")
+@extends ("playground::layouts.resource.layout")
 
-@section("title", "Directory")
+@section ("title", "Directory")
 
-@section("breadcrumbs")
+@section ("breadcrumbs")
     <div class="container-fluid mt-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -17,7 +17,7 @@
     </div>
 @endsection
 
-@section("content")
+@section ("content")
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">

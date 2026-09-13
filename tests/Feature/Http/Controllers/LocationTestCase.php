@@ -38,6 +38,8 @@ class LocationTestCase extends TestCase
         'model_route' => 'playground.directory.resource.locations',
         'model_slug' => 'location',
         'model_slug_plural' => 'locations',
+        'model_variable' => 'location',
+        'model_variable_plural' => 'locations',
         'module_label' => 'Directory',
         'module_label_plural' => 'Directories',
         'module_route' => 'playground.directory.resource',

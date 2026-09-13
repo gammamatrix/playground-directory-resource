@@ -33,6 +33,8 @@ class SublocationController extends Controller
         'model_route' => 'playground.directory.resource.sublocations',
         'model_slug' => 'sublocation',
         'model_slug_plural' => 'sublocations',
+        'model_variable' => 'sublocation',
+        'model_variable_plural' => 'sublocations',
         'module_label' => 'Directory',
         'module_label_plural' => 'Directories',
         'module_route' => 'playground.directory.resource',

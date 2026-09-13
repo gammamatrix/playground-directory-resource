@@ -151,7 +151,7 @@ $flags = [
 ];
 ?>
 
-@extends(
+@extends (
     "playground::layouts.resource.detail",
     [
         "withInfo" => false,
@@ -160,24 +160,26 @@ $flags = [
     ]
 )
 
-@section("detail-information-flags")
-    @include("playground::layouts.resource.detail-flags")
+@section ("detail-information-flags")
+    @include ("playground::layouts.resource.detail-flags")
 @endsection
 
-@section("detail-card-body-header")
-    
+@section ("detail-card-body-header")
+
 @endsection
 
-@section("detail-accordion-body-header")
+@section ("detail-accordion-body-header")
     <div class="row mb-3">
         <div class="col-sm-6 col-md-4 mb-3">
-            @include("playground-directory-resource::io/manage-owner")
+            @include ("playground-directory-resource::io/manage-owner")
         </div>
         <div class="col-sm-6 col-md-4 mb-3">
-            @include("playground-directory-resource::io/manage-parent")
+            @include ("playground-directory-resource::io/manage-parent")
         </div>
-        <div class="col-sm-6 col-md-4 mb-3">
-            @include("playground-directory-resource::io/manage-matrix")
-        </div>
+        @if (config("playground-directory-resource.matrix.enabled"))
+            <div class="col-sm-6 col-md-4 mb-3">
+                @include ("playground-cms-resource::io/manage-matrix")
+            </div>
+        @endif
     </div>
 @endsection

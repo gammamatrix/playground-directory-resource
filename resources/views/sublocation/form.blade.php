@@ -1,4 +1,4 @@
-@extends(
+@extends (
     "playground::layouts.resource.form",
     [
         "withFormInfo" =>
@@ -7,8 +7,8 @@
     ]
 )
 
-@section("form-quaternary")
-    @includeWhen(
+@section ("form-quaternary")
+    @includeWhen (
         ! empty($_method) && "patch" === $_method,
         "playground-directory-resource::sublocation/form-revisions"
     )
