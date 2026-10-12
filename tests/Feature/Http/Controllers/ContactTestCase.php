@@ -1,0 +1,163 @@
+<?php
+
+/**
+ * Playground
+ */
+
+declare(strict_types=1);
+
+namespace Tests\Feature\Playground\Directory\Resource\Http\Controllers;
+
+use Illuminate\Database\Eloquent\Model;
+use Playground\Directory\Models\Contact;
+use Playground\Directory\Models\ContactRevision;
+
+/**
+ * \Tests\Feature\Playground\Directory\Resource\Http\Controllers\ContactTestCase
+ */
+class ContactTestCase extends PlaygroundCase
+{
+    public string $fqdn = Contact::class;
+
+    /**
+     * @var class-string<Model>
+     */
+    public string $fqdnRevision = ContactRevision::class;
+
+    public string $revisionId = 'contact_id';
+
+    public string $revisionRouteParameter = 'contact_revision';
+
+    /**
+     * @var array<string, string>
+     */
+    public array $packageInfo = [
+        'model_attribute' => 'title',
+        'model_camel' => 'contact',
+        'model_camels' => 'contacts',
+        'model_kebab' => 'contact',
+        'model_kebabs' => 'contacts',
+        'model_lower' => 'contact',
+        'model_lowers' => 'contacts',
+        'model_label' => 'Contact',
+        'model_label_plural' => 'Contacts',
+        'model_labels' => 'Contacts',
+        'model_route' => 'playground.directory.resource.contacts',
+        'model_route_param' => 'contact',
+        'model_slug' => 'contact',
+        'model_slugs' => 'contacts',
+        'model_slug_plural' => 'contacts',
+        'model_snake' => 'contact',
+        'model_snakes' => 'contacts',
+        'model_studly' => 'Contact',
+        'model_studlies' => 'Contacts',
+        'model_variable' => 'contact',
+        'model_variables' => 'contacts',
+        'model_variable_plural' => 'contacts',
+        'module_label' => 'Directory',
+        'module_label_plural' => 'Directories',
+        'module_route' => 'playground.directory.resource',
+        'module_slug' => 'directory',
+        'module_slugs' => 'directories',
+        'privilege' => 'playground-directory-resource:contact',
+        'table' => 'directory_contacts',
+        'view' => 'playground.directory.resource::contact',
+    ];
+
+    /**
+     * @var array<int, string>
+     */
+    protected $structure_model = [
+        'id',
+        'contact_type',
+        'created_by_id',
+        'modified_by_id',
+        'owned_by_id',
+        'parent_id',
+        'matrix_id',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'canceled_at',
+        'closed_at',
+        'embargo_at',
+        'fixed_at',
+        'planned_end_at',
+        'planned_start_at',
+        'postponed_at',
+        'published_at',
+        'released_at',
+        'resolved_at',
+        'resumed_at',
+        'suspended_at',
+        'timer_end_at',
+        'timer_start_at',
+        'gids',
+        'po',
+        'pg',
+        'pw',
+        'only_admin',
+        'only_user',
+        'only_guest',
+        'allow_public',
+        'status',
+        'rank',
+        'size',
+        'revision',
+        'matrix',
+        'x',
+        'y',
+        'z',
+        'r',
+        'theta',
+        'rho',
+        'phi',
+        'elevation',
+        'latitude',
+        'longitude',
+        'active',
+        'canceled',
+        'closed',
+        'completed',
+        'cron',
+        'duplicate',
+        'fixed',
+        'flagged',
+        'internal',
+        'locked',
+        'pending',
+        'planned',
+        'prioritized',
+        'problem',
+        'published',
+        'released',
+        'resolved',
+        'retired',
+        'sitemap',
+        'suspended',
+        'unknown',
+        'locale',
+        'label',
+        'title',
+        'byline',
+        'slug',
+        'url',
+        'description',
+        'introduction',
+        'content',
+        'summary',
+        'email',
+        'phone',
+        'icon',
+        'image',
+        'avatar',
+        'ui',
+        'address',
+        'assets',
+        'contact',
+        'meta',
+        'notes',
+        'options',
+        'sources',
+    ];
+}

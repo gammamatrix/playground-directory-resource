@@ -7,12 +7,12 @@
 declare(strict_types=1);
 use Illuminate\Database\Eloquent\Model;
 use Playground\Auth\Policies\Policy;
+use Playground\Directory\Models\Contact;
+use Playground\Directory\Models\ContactRevision;
 use Playground\Directory\Models\Location;
 use Playground\Directory\Models\LocationRevision;
-use Playground\Directory\Models\Sublocation;
-use Playground\Directory\Models\SublocationRevision;
+use Playground\Directory\Resource\Policies\ContactPolicy;
 use Playground\Directory\Resource\Policies\LocationPolicy;
-use Playground\Directory\Resource\Policies\SublocationPolicy;
 
 /**
  * Playground: Directory Resource Configuration and Environment Variables
@@ -40,23 +40,23 @@ use Playground\Directory\Resource\Policies\SublocationPolicy;
  *       >,
  *       revisions: array{
  *           options: bool,
+ *           contacts: bool,
  *           locations: bool,
- *           sublocations: bool,
  *       },
  *       routes: array{
  *           directory: bool,
+ *           contacts: bool,
  *           locations: bool,
- *           sublocations: bool,
  *       },
  *       blade: string,
  *       cache: array{
  *           enable: bool,
+ *           contact: bool,
+ *           contact_store: string,
+ *           contact_ttl: int,
  *           location: bool,
  *           location_store: string,
  *           location_ttl: int,
- *           sublocation: bool,
- *           sublocation_store: string,
- *           sublocation_ttl: int,
  *       },
  *       abilities: array<string, string[]>,
  *       sitemap: array{
@@ -133,10 +133,10 @@ return [
     */
 
     'policies' => [
+        Contact::class => ContactPolicy::class,
+        ContactRevision::class => ContactPolicy::class,
         Location::class => LocationPolicy::class,
         LocationRevision::class => LocationPolicy::class,
-        Sublocation::class => SublocationPolicy::class,
-        SublocationRevision::class => SublocationPolicy::class,
     ],
 
     /*
@@ -149,8 +149,8 @@ return [
 
     'revisions' => [
         'optional' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_REVISIONS_OPTIONAL', false),
+        'contacts' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_REVISIONS_CONTACTS', true),
         'locations' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_REVISIONS_LOCATIONS', true),
-        'sublocations' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_REVISIONS_SUBLOCATIONS', true),
     ],
 
     /*
@@ -163,8 +163,8 @@ return [
 
     'routes' => [
         'directory' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_DIRECTORY', true),
+        'contacts' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_CONTACTS', true),
         'locations' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_LOCATIONS', true),
-        'sublocations' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_SUBLOCATIONS', true),
     ],
 
     /*
@@ -205,14 +205,14 @@ return [
             'playground-directory-resource:*',
         ],
         'manager' => [
+            'playground-directory-resource:contact:*',
             'playground-directory-resource:location:*',
-            'playground-directory-resource:sublocation:*',
         ],
         'user' => [
+            'playground-directory-resource:contact:view',
+            'playground-directory-resource:contact:viewAny',
             'playground-directory-resource:location:view',
             'playground-directory-resource:location:viewAny',
-            'playground-directory-resource:sublocation:view',
-            'playground-directory-resource:sublocation:viewAny',
         ],
     ],
 ];

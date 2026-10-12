@@ -1,0 +1,51 @@
+parameters:
+  -
+    in: path
+    name: id
+    required: true
+    description: 'The contact revision id.'
+    schema:
+      type: string
+      format: uuid
+get:
+  tags:
+    - Contact
+  summary: 'Show a contact revision by ID.'
+  operationId: revision_contact
+  responses:
+    200:
+      description: 'The contact revision.'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: ../../models/contact-revision.yml
+              meta:
+                type: object
+    401:
+      description: Unauthorized
+    403:
+      description: Forbidden
+put:
+  tags:
+    - Contact
+  summary: 'Restore a contact Revision by ID.'
+  operationId: restore_revision_contact
+  responses:
+    200:
+      description: 'The restored contact.'
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: ../../models/contact.yml
+              meta:
+                type: object
+    401:
+      description: Unauthorized
+    403:
+      description: Forbidden

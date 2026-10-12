@@ -8,9 +8,9 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <a href="{{ route("playground.directory.resource") }}">
-                        Directory
-                    </a>
+                    <a href="{{ route("playground.directory.resource") }}"
+                        >Directory</a
+                    >
                 </li>
             </ol>
         </nav>
@@ -30,6 +30,24 @@
                             <div class="col-sm-6">
                                 <div class="card m-1">
                                     <div class="card-body">
+                                        <h5 class="card-title">Contacts</h5>
+                                        <h6
+                                            class="card-subtitle mb-2 text-muted"
+                                        >
+                                            Manage contacts
+                                        </h6>
+                                        <p class="card-text"></p>
+                                        <a
+                                            class="card-link"
+                                            href="{{ route('playground.directory.resource.contacts') }}"
+                                            >View Contacts</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card m-1">
+                                    <div class="card-body">
                                         <h5 class="card-title">Locations</h5>
                                         <h6
                                             class="card-subtitle mb-2 text-muted"
@@ -39,29 +57,9 @@
                                         <p class="card-text"></p>
                                         <a
                                             class="card-link"
-                                            href="{{ route("playground.directory.resource.locations") }}"
+                                            href="{{ route('playground.directory.resource.locations') }}"
+                                            >View Locations</a
                                         >
-                                            View Locations
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card m-1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Sublocations</h5>
-                                        <h6
-                                            class="card-subtitle mb-2 text-muted"
-                                        >
-                                            Manage sublocations
-                                        </h6>
-                                        <p class="card-text"></p>
-                                        <a
-                                            class="card-link"
-                                            href="{{ route("playground.directory.resource.sublocations") }}"
-                                        >
-                                            View Sublocations
-                                        </a>
                                     </div>
                                 </div>
                             </div>

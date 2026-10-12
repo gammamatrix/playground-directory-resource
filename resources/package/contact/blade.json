@@ -1,0 +1,25 @@
+{
+    "class": "contact/index.blade",
+    "config": "playground-directory-resource",
+    "fqdn": "contact/index.blade",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "Contact",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "extends": "playground::layouts.resource",
+    "folder": "contact",
+    "model": "Contact",
+    "model_column": "contact",
+    "model_label": "Contact",
+    "model_slug": "contact",
+    "model_variable": "contact",
+    "model_variable_plural": "contacts",
+    "type": "playground-resource",
+    "route": "playground.directory.resource",
+    "title": "Contact",
+    "models": {
+        "Contact": "resources/configurations/playground-directory/contact/model.json"
+    }
+}

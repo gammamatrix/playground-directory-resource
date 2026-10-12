@@ -7,7 +7,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
-use Playground\Directory\Models\Location;
+use Playground\Directory\Models\Contact;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +26,6 @@ Route::group([
     Route::get('/', [
         'as' => 'playground.directory.resource',
         'uses' => 'IndexController@index',
-    ])->can('index', Location::class);
+    ])->can('index', Contact::class);
 
 });

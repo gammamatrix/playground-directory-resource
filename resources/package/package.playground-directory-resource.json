@@ -4,12 +4,16 @@
     "config_space": "PLAYGROUND_DIRECTORY_RESOURCE",
     "fqdn": "Playground/Directory/Resource/ServiceProvider",
     "module": "Directory",
+    "module_label": "Directory",
+    "module_labels": "Directories",
     "module_slug": "directory",
+    "module_slugs": "directories",
     "name": "Directory Resource",
     "namespace": "Playground/Directory/Resource",
     "organization": "Playground",
     "organization_email": "jeremy.postlethwaite@gmail.com",
     "package": "playground-directory-resource",
+    "recipe": "",
     "withBlades": true,
     "withControllers": true,
     "withFactories": false,
@@ -19,6 +23,7 @@
     "withPolicies": true,
     "withRequests": true,
     "withRoutes": true,
+    "withSeeders": false,
     "withTests": true,
     "withTranslations": true,
     "playground": true,
@@ -26,6 +31,7 @@
     "docs_name": "Playground: Directory Resource at Read the Docs: Playground Documentation",
     "docs_url": "https://gammamatrix-playground.readthedocs.io/en/develop/built-components/directory.html",
     "package_name": "Playground: Directory Resource",
+    "model_index": "",
     "model_package": "playground-directory",
     "model_package_name": "Playground: Directory",
     "package_description": "Playground: Provides an API and a Blade UI for interacting with Playground Directory, a Directory System for Laravel applications.",
@@ -36,7 +42,7 @@
     "postman_url": "",
     "service_provider": "",
     "type": "playground-resource",
-    "version": "74.0.0",
+    "version": "75.0.0",
     "package_authors": [
         {
             "name": "Jeremy Postlethwaite",
@@ -57,37 +63,26 @@
         "Playground/Directory/Resource/ServiceProvider"
     ],
     "package_providers": [],
+    "package_repositories": [],
     "package_require": {
         "php": "^8.4",
         "gammamatrix/playground": "*",
         "gammamatrix/playground-auth": "*",
         "gammamatrix/playground-http": "*",
-        "gammamatrix/playground-directory": "*",
-        "illuminate/support": "^12.0"
+        "gammamatrix/playground-directory": "*"
     },
     "package_require_dev": {
         "gammamatrix/playground-test": "*",
         "gammamatrix/playground-login-blade": "*",
-        "gammamatrix/playground-site-blade": "*",
-        "illuminate/testing": "^12.0"
+        "gammamatrix/playground-site-blade": "*"
     },
     "package_suggest": [],
-    "controllers": [
-        "resources/package/controller.base.json",
-        "resources/package/index/controller.json",
-        "resources/package/location/controller.json",
-        "resources/package/sublocation/controller.json"
-    ],
+    "controllers": [],
     "models": [],
     "policies": [],
-    "requests": [
-        "resources/package/form.request.json"
-    ],
-    "routes": {
-        "directory": "",
-        "locations": "resources/package/location/route.json",
-        "sublocations": "resources/package/sublocation/route.json"
-    },
+    "requests": [],
+    "routes": [],
+    "seeders": [],
     "transformers": [],
     "translations": [],
     "uses": []

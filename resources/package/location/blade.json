@@ -13,10 +13,13 @@
     "model": "Location",
     "model_column": "location",
     "model_label": "Location",
+    "model_slug": "location",
+    "model_variable": "location",
+    "model_variable_plural": "locations",
     "type": "playground-resource",
     "route": "playground.directory.resource",
     "title": "Location",
     "models": {
-        "Location": "resources/configurations/playground-directory/model.location.json"
+        "Location": "resources/configurations/playground-directory/location/model.json"
     }
 }

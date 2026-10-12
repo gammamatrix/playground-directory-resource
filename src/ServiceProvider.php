@@ -51,23 +51,23 @@ class ServiceProvider extends AuthServiceProvider
          *        >,
          *        revisions: array{
          *            options: bool,
+         *            contacts: bool,
          *            locations: bool,
-         *            sublocations: bool,
          *        },
          *        routes: array{
          *             directory: bool,
+         *             contacts: bool,
          *             locations: bool,
-         *             sublocations: bool,
          *        },
          *        blade: string,
          *        cache: array{
          *            enable: bool,
+         *           contact: bool,
+         *           contact_store: string,
+         *           contact_ttl: int,
          *           location: bool,
          *           location_store: string,
          *           location_ttl: int,
-         *           sublocation: bool,
-         *           sublocation_store: string,
-         *           sublocation_ttl: int,
          *        },
          *        abilities: array<string, string[]>,
          *        sitemap: array{
@@ -180,11 +180,11 @@ class ServiceProvider extends AuthServiceProvider
         if (! empty($config['directory'])) {
             $this->loadRoutesFrom(dirname(__DIR__).'/routes/directory.php');
         }
+        if (! empty($config['contacts'])) {
+            $this->loadRoutesFrom(dirname(__DIR__).'/routes/contacts.php');
+        }
         if (! empty($config['locations'])) {
             $this->loadRoutesFrom(dirname(__DIR__).'/routes/locations.php');
-        }
-        if (! empty($config['sublocations'])) {
-            $this->loadRoutesFrom(dirname(__DIR__).'/routes/sublocations.php');
         }
     }
 
@@ -220,8 +220,8 @@ class ServiceProvider extends AuthServiceProvider
             '<fg=magenta;options=bold>Sitemap</> [view]' => ! empty($sitemap['view']) && is_string($sitemap['view']) ? sprintf('[%s]', $sitemap['view']) : '',
 
             '<fg=red;options=bold>Route</> directory' => ! empty($routes['directory']) ? '<fg=green;options=bold>ENABLED</>' : '<fg=yellow;options=bold>DISABLED</>',
+            '<fg=red;options=bold>Route</> contacts' => ! empty($routes['contacts']) ? '<fg=green;options=bold>ENABLED</>' : '<fg=yellow;options=bold>DISABLED</>',
             '<fg=red;options=bold>Route</> locations' => ! empty($routes['locations']) ? '<fg=green;options=bold>ENABLED</>' : '<fg=yellow;options=bold>DISABLED</>',
-            '<fg=red;options=bold>Route</> sublocations' => ! empty($routes['sublocations']) ? '<fg=green;options=bold>ENABLED</>' : '<fg=yellow;options=bold>DISABLED</>',
 
             'Package' => $this->package,
             'Version' => ServiceProvider::VERSION,

@@ -30,13 +30,13 @@ properties:
     type: string
     format: uuid
     nullable: true
-  location_id:
-    description: 'Foreign key: links a location to this location revision.'
+  matrix_id:
+    description: 'Foreign key: links a matrix to this location revision.'
     type: string
     format: uuid
     nullable: true
-  matrix_id:
-    description: 'Foreign key: links a matrix to this location revision.'
+  location_id:
+    description: 'Foreign key: links a location to this location revision.'
     type: string
     format: uuid
     nullable: true
@@ -100,13 +100,13 @@ properties:
     type: string
     format: date-time
     nullable: true
-  resumed_at:
-    description: 'The resumed at date for this location revision.'
+  resolved_at:
+    description: 'The resolved at date for this location revision.'
     type: string
     format: date-time
     nullable: true
-  resolved_at:
-    description: 'The resolved at date for this location revision.'
+  resumed_at:
+    description: 'The resumed at date for this location revision.'
     type: string
     format: date-time
     nullable: true
@@ -287,6 +287,10 @@ properties:
     nullable: true
   summary:
     description: 'The summary of the location revision. Allows HTML.'
+    type: string
+    nullable: true
+  email:
+    description: 'The email of the location revision.'
     type: string
     nullable: true
   phone:

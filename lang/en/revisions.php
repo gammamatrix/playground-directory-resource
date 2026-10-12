@@ -13,10 +13,10 @@ return [
 
     'optional' => 'Revisions are optional.',
 
+    'contacts.enabled' => 'Revisions are enabled for contacts.',
+    'contacts.disabled' => 'Revisions are disabled for contacts.',
+
     'locations.enabled' => 'Revisions are enabled for locations.',
     'locations.disabled' => 'Revisions are disabled for locations.',
-
-    'sublocations.enabled' => 'Revisions are enabled for sublocations.',
-    'sublocations.disabled' => 'Revisions are disabled for sublocations.',
 
 ];
