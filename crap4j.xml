@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2026-09-13 18:44:56</timestamp>
+  <timestamp>2026-10-12 21:12:42</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>62</methodCount>
@@ -11,6 +11,160 @@
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>create</methodName>
+      <methodSignature>create(Requests\Contact\CreateRequest $request): JsonResponse|View|Resources\Contact</methodSignature>
+      <fullMethod>create(Requests\Contact\CreateRequest $request): JsonResponse|View|Resources\Contact</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>edit</methodName>
+      <methodSignature>edit(Contact $contact, Requests\Contact\EditRequest $request): JsonResponse|View|Resources\Contact</methodSignature>
+      <fullMethod>edit(Contact $contact, Requests\Contact\EditRequest $request): JsonResponse|View|Resources\Contact</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>destroy</methodName>
+      <methodSignature>destroy(Contact $contact, Requests\Contact\DestroyRequest $request): Response|RedirectResponse</methodSignature>
+      <fullMethod>destroy(Contact $contact, Requests\Contact\DestroyRequest $request): Response|RedirectResponse</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>lock</methodName>
+      <methodSignature>lock(Contact $contact, Requests\Contact\LockRequest $request): JsonResponse|RedirectResponse|Resources\Contact</methodSignature>
+      <fullMethod>lock(Contact $contact, Requests\Contact\LockRequest $request): JsonResponse|RedirectResponse|Resources\Contact</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>index</methodName>
+      <methodSignature>index(Requests\Contact\IndexRequest $request): JsonResponse|View|Resources\ContactCollection</methodSignature>
+      <fullMethod>index(Requests\Contact\IndexRequest $request): JsonResponse|View|Resources\ContactCollection</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>restore</methodName>
+      <methodSignature>restore(Contact $contact, Requests\Contact\RestoreRequest $request): JsonResponse|RedirectResponse|Resources\Contact</methodSignature>
+      <fullMethod>restore(Contact $contact, Requests\Contact\RestoreRequest $request): JsonResponse|RedirectResponse|Resources\Contact</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>restoreRevision</methodName>
+      <methodSignature>restoreRevision(ContactRevision $contact_revision, Requests\Contact\RestoreRevisionRequest $request): JsonResponse|RedirectResponse|Resources\Contact</methodSignature>
+      <fullMethod>restoreRevision(ContactRevision $contact_revision, Requests\Contact\RestoreRevisionRequest $request): JsonResponse|RedirectResponse|Resources\Contact</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>revision</methodName>
+      <methodSignature>revision(ContactRevision $contact_revision, Requests\Contact\ShowRevisionRequest $request): JsonResponse|View|Resources\ContactRevision</methodSignature>
+      <fullMethod>revision(ContactRevision $contact_revision, Requests\Contact\ShowRevisionRequest $request): JsonResponse|View|Resources\ContactRevision</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>revisions</methodName>
+      <methodSignature>revisions(Contact $contact, Requests\Contact\RevisionsRequest $request): JsonResponse|View|Resources\ContactRevisionCollection</methodSignature>
+      <fullMethod>revisions(Contact $contact, Requests\Contact\RevisionsRequest $request): JsonResponse|View|Resources\ContactRevisionCollection</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>saveRevision</methodName>
+      <methodSignature>saveRevision(Contact $contact): ContactRevision</methodSignature>
+      <fullMethod>saveRevision(Contact $contact): ContactRevision</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>show</methodName>
+      <methodSignature>show(Contact $contact, Requests\Contact\ShowRequest $request): JsonResponse|View|Resources\Contact</methodSignature>
+      <fullMethod>show(Contact $contact, Requests\Contact\ShowRequest $request): JsonResponse|View|Resources\Contact</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(Requests\Contact\StoreRequest $request): Response|JsonResponse|RedirectResponse|Resources\Contact</methodSignature>
+      <fullMethod>store(Requests\Contact\StoreRequest $request): Response|JsonResponse|RedirectResponse|Resources\Contact</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>unlock</methodName>
+      <methodSignature>unlock(Contact $contact, Requests\Contact\UnlockRequest $request): JsonResponse|RedirectResponse|Resources\Contact</methodSignature>
+      <fullMethod>unlock(Contact $contact, Requests\Contact\UnlockRequest $request): JsonResponse|RedirectResponse|Resources\Contact</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>Playground\Directory\Resource\Http\Controllers</package>
+      <className>Playground\Directory\Resource\Http\Controllers\ContactController</className>
+      <methodName>update</methodName>
+      <methodSignature>update(Contact $contact, Requests\Contact\UpdateRequest $request): JsonResponse|RedirectResponse|Resources\Contact</methodSignature>
+      <fullMethod>update(Contact $contact, Requests\Contact\UpdateRequest $request): JsonResponse|RedirectResponse|Resources\Contact</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
     <method>
       <package>Playground\Directory\Resource\Http\Controllers</package>
       <className>Playground\Directory\Resource\Http\Controllers\Controller</className>
@@ -188,156 +342,57 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>create</methodName>
-      <methodSignature>create(Requests\Sublocation\CreateRequest $request): JsonResponse|View|Resources\Sublocation</methodSignature>
-      <fullMethod>create(Requests\Sublocation\CreateRequest $request): JsonResponse|View|Resources\Sublocation</fullMethod>
-      <crap>4</crap>
-      <complexity>4</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>edit</methodName>
-      <methodSignature>edit(Sublocation $sublocation, Requests\Sublocation\EditRequest $request): JsonResponse|View|Resources\Sublocation</methodSignature>
-      <fullMethod>edit(Sublocation $sublocation, Requests\Sublocation\EditRequest $request): JsonResponse|View|Resources\Sublocation</fullMethod>
-      <crap>4</crap>
-      <complexity>4</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>destroy</methodName>
-      <methodSignature>destroy(Sublocation $sublocation, Requests\Sublocation\DestroyRequest $request): Response|RedirectResponse</methodSignature>
-      <fullMethod>destroy(Sublocation $sublocation, Requests\Sublocation\DestroyRequest $request): Response|RedirectResponse</fullMethod>
-      <crap>6</crap>
-      <complexity>6</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>lock</methodName>
-      <methodSignature>lock(Sublocation $sublocation, Requests\Sublocation\LockRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</methodSignature>
-      <fullMethod>lock(Sublocation $sublocation, Requests\Sublocation\LockRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>index</methodName>
-      <methodSignature>index(Requests\Sublocation\IndexRequest $request): JsonResponse|View|Resources\SublocationCollection</methodSignature>
-      <fullMethod>index(Requests\Sublocation\IndexRequest $request): JsonResponse|View|Resources\SublocationCollection</fullMethod>
-      <crap>6</crap>
-      <complexity>6</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>restore</methodName>
-      <methodSignature>restore(Sublocation $sublocation, Requests\Sublocation\RestoreRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</methodSignature>
-      <fullMethod>restore(Sublocation $sublocation, Requests\Sublocation\RestoreRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</fullMethod>
-      <crap>4</crap>
-      <complexity>4</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>restoreRevision</methodName>
-      <methodSignature>restoreRevision(SublocationRevision $sublocation_revision, Requests\Sublocation\RestoreRevisionRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</methodSignature>
-      <fullMethod>restoreRevision(SublocationRevision $sublocation_revision, Requests\Sublocation\RestoreRevisionRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>revision</methodName>
-      <methodSignature>revision(SublocationRevision $sublocation_revision, Requests\Sublocation\ShowRevisionRequest $request): JsonResponse|View|Resources\SublocationRevision</methodSignature>
-      <fullMethod>revision(SublocationRevision $sublocation_revision, Requests\Sublocation\ShowRevisionRequest $request): JsonResponse|View|Resources\SublocationRevision</fullMethod>
+      <package>Playground\Directory\Resource\Http\Requests\Contact</package>
+      <className>Playground\Directory\Resource\Http\Requests\Contact\DestroyRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
       <crap>2</crap>
       <complexity>2</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>revisions</methodName>
-      <methodSignature>revisions(Sublocation $sublocation, Requests\Sublocation\RevisionsRequest $request): JsonResponse|View|Resources\SublocationRevisionCollection</methodSignature>
-      <fullMethod>revisions(Sublocation $sublocation, Requests\Sublocation\RevisionsRequest $request): JsonResponse|View|Resources\SublocationRevisionCollection</fullMethod>
-      <crap>6</crap>
-      <complexity>6</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>saveRevision</methodName>
-      <methodSignature>saveRevision(Sublocation $sublocation): SublocationRevision</methodSignature>
-      <fullMethod>saveRevision(Sublocation $sublocation): SublocationRevision</fullMethod>
-      <crap>4</crap>
-      <complexity>4</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>show</methodName>
-      <methodSignature>show(Sublocation $sublocation, Requests\Sublocation\ShowRequest $request): JsonResponse|View|Resources\Sublocation</methodSignature>
-      <fullMethod>show(Sublocation $sublocation, Requests\Sublocation\ShowRequest $request): JsonResponse|View|Resources\Sublocation</fullMethod>
+      <package>Playground\Directory\Resource\Http\Requests\Contact</package>
+      <className>Playground\Directory\Resource\Http\Requests\Contact\StoreRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
       <crap>2</crap>
       <complexity>2</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>store</methodName>
-      <methodSignature>store(Requests\Sublocation\StoreRequest $request): Response|JsonResponse|RedirectResponse|Resources\Sublocation</methodSignature>
-      <fullMethod>store(Requests\Sublocation\StoreRequest $request): Response|JsonResponse|RedirectResponse|Resources\Sublocation</fullMethod>
-      <crap>4</crap>
-      <complexity>4</complexity>
+      <package>Playground\Directory\Resource\Http\Requests\Contact</package>
+      <className>Playground\Directory\Resource\Http\Requests\Contact\StoreRequest</className>
+      <methodName>prepareForValidation</methodName>
+      <methodSignature>prepareForValidation()</methodSignature>
+      <fullMethod>prepareForValidation()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>unlock</methodName>
-      <methodSignature>unlock(Sublocation $sublocation, Requests\Sublocation\UnlockRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</methodSignature>
-      <fullMethod>unlock(Sublocation $sublocation, Requests\Sublocation\UnlockRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</fullMethod>
-      <crap>4</crap>
-      <complexity>4</complexity>
+      <package>Playground\Directory\Resource\Http\Requests\Contact</package>
+      <className>Playground\Directory\Resource\Http\Requests\Contact\UpdateRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Controllers</package>
-      <className>Playground\Directory\Resource\Http\Controllers\SublocationController</className>
-      <methodName>update</methodName>
-      <methodSignature>update(Sublocation $sublocation, Requests\Sublocation\UpdateRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</methodSignature>
-      <fullMethod>update(Sublocation $sublocation, Requests\Sublocation\UpdateRequest $request): JsonResponse|RedirectResponse|Resources\Sublocation</fullMethod>
-      <crap>4</crap>
-      <complexity>4</complexity>
+      <package>Playground\Directory\Resource\Http\Requests\Contact</package>
+      <className>Playground\Directory\Resource\Http\Requests\Contact\UpdateRequest</className>
+      <methodName>prepareForValidation</methodName>
+      <methodSignature>prepareForValidation()</methodSignature>
+      <fullMethod>prepareForValidation()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -430,57 +485,46 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Requests\Sublocation</package>
-      <className>Playground\Directory\Resource\Http\Requests\Sublocation\DestroyRequest</className>
-      <methodName>rules</methodName>
-      <methodSignature>rules(): array</methodSignature>
-      <fullMethod>rules(): array</fullMethod>
-      <crap>2</crap>
-      <complexity>2</complexity>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\Contact</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Request $request): array</methodSignature>
+      <fullMethod>with(Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Requests\Sublocation</package>
-      <className>Playground\Directory\Resource\Http\Requests\Sublocation\StoreRequest</className>
-      <methodName>rules</methodName>
-      <methodSignature>rules(): array</methodSignature>
-      <fullMethod>rules(): array</fullMethod>
-      <crap>2</crap>
-      <complexity>2</complexity>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\ContactCollection</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Request $request): array</methodSignature>
+      <fullMethod>with(Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Requests\Sublocation</package>
-      <className>Playground\Directory\Resource\Http\Requests\Sublocation\StoreRequest</className>
-      <methodName>prepareForValidation</methodName>
-      <methodSignature>prepareForValidation()</methodSignature>
-      <fullMethod>prepareForValidation()</fullMethod>
-      <crap>2</crap>
-      <complexity>2</complexity>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\ContactRevision</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Request $request): array</methodSignature>
+      <fullMethod>with(Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Requests\Sublocation</package>
-      <className>Playground\Directory\Resource\Http\Requests\Sublocation\UpdateRequest</className>
-      <methodName>rules</methodName>
-      <methodSignature>rules(): array</methodSignature>
-      <fullMethod>rules(): array</fullMethod>
-      <crap>2</crap>
-      <complexity>2</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Http\Requests\Sublocation</package>
-      <className>Playground\Directory\Resource\Http\Requests\Sublocation\UpdateRequest</className>
-      <methodName>prepareForValidation</methodName>
-      <methodSignature>prepareForValidation()</methodSignature>
-      <fullMethod>prepareForValidation()</fullMethod>
-      <crap>2</crap>
-      <complexity>2</complexity>
+      <package>Playground\Directory\Resource\Http\Resources</package>
+      <className>Playground\Directory\Resource\Http\Resources\ContactRevisionCollection</className>
+      <methodName>with</methodName>
+      <methodSignature>with(Request $request): array</methodSignature>
+      <fullMethod>with(Request $request): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -529,44 +573,33 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Resources</package>
-      <className>Playground\Directory\Resource\Http\Resources\Sublocation</className>
-      <methodName>with</methodName>
-      <methodSignature>with(Request $request): array</methodSignature>
-      <fullMethod>with(Request $request): array</fullMethod>
+      <package>Playground\Directory\Resource\Policies</package>
+      <className>Playground\Directory\Resource\Policies\ContactPolicy</className>
+      <methodName>revisions</methodName>
+      <methodSignature>revisions(Authenticatable $user): bool|Response</methodSignature>
+      <fullMethod>revisions(Authenticatable $user): bool|Response</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Resources</package>
-      <className>Playground\Directory\Resource\Http\Resources\SublocationCollection</className>
-      <methodName>with</methodName>
-      <methodSignature>with(Request $request): array</methodSignature>
-      <fullMethod>with(Request $request): array</fullMethod>
+      <package>Playground\Directory\Resource\Policies</package>
+      <className>Playground\Directory\Resource\Policies\ContactPolicy</className>
+      <methodName>viewRevision</methodName>
+      <methodSignature>viewRevision(Authenticatable $user, ContactRevision $contact_revision): bool|Response</methodSignature>
+      <fullMethod>viewRevision(Authenticatable $user, ContactRevision $contact_revision): bool|Response</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>Playground\Directory\Resource\Http\Resources</package>
-      <className>Playground\Directory\Resource\Http\Resources\SublocationRevision</className>
-      <methodName>with</methodName>
-      <methodSignature>with(Request $request): array</methodSignature>
-      <fullMethod>with(Request $request): array</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Http\Resources</package>
-      <className>Playground\Directory\Resource\Http\Resources\SublocationRevisionCollection</className>
-      <methodName>with</methodName>
-      <methodSignature>with(Request $request): array</methodSignature>
-      <fullMethod>with(Request $request): array</fullMethod>
+      <package>Playground\Directory\Resource\Policies</package>
+      <className>Playground\Directory\Resource\Policies\ContactPolicy</className>
+      <methodName>restoreRevision</methodName>
+      <methodSignature>restoreRevision(Authenticatable $user, ContactRevision $contact_revision): bool|Response</methodSignature>
+      <fullMethod>restoreRevision(Authenticatable $user, ContactRevision $contact_revision): bool|Response</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -600,39 +633,6 @@
       <methodName>restoreRevision</methodName>
       <methodSignature>restoreRevision(Authenticatable $user, LocationRevision $location_revision): bool|Response</methodSignature>
       <fullMethod>restoreRevision(Authenticatable $user, LocationRevision $location_revision): bool|Response</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Policies</package>
-      <className>Playground\Directory\Resource\Policies\SublocationPolicy</className>
-      <methodName>revisions</methodName>
-      <methodSignature>revisions(Authenticatable $user): bool|Response</methodSignature>
-      <fullMethod>revisions(Authenticatable $user): bool|Response</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Policies</package>
-      <className>Playground\Directory\Resource\Policies\SublocationPolicy</className>
-      <methodName>viewRevision</methodName>
-      <methodSignature>viewRevision(Authenticatable $user, SublocationRevision $sublocation_revision): bool|Response</methodSignature>
-      <fullMethod>viewRevision(Authenticatable $user, SublocationRevision $sublocation_revision): bool|Response</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>Playground\Directory\Resource\Policies</package>
-      <className>Playground\Directory\Resource\Policies\SublocationPolicy</className>
-      <methodName>restoreRevision</methodName>
-      <methodSignature>restoreRevision(Authenticatable $user, SublocationRevision $sublocation_revision): bool|Response</methodSignature>
-      <fullMethod>restoreRevision(Authenticatable $user, SublocationRevision $sublocation_revision): bool|Response</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
