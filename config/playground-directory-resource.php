@@ -11,8 +11,12 @@ use Playground\Directory\Models\Contact;
 use Playground\Directory\Models\ContactRevision;
 use Playground\Directory\Models\Location;
 use Playground\Directory\Models\LocationRevision;
+use Playground\Directory\Models\Tag;
+use Playground\Directory\Models\Tagged;
 use Playground\Directory\Resource\Policies\ContactPolicy;
 use Playground\Directory\Resource\Policies\LocationPolicy;
+use Playground\Directory\Resource\Policies\TaggedPolicy;
+use Playground\Directory\Resource\Policies\TagPolicy;
 
 /**
  * Playground: Directory Resource Configuration and Environment Variables
@@ -47,6 +51,8 @@ use Playground\Directory\Resource\Policies\LocationPolicy;
  *           directory: bool,
  *           contacts: bool,
  *           locations: bool,
+ *           tags: bool,
+ *           tagged: bool,
  *       },
  *       blade: string,
  *       cache: array{
@@ -137,6 +143,8 @@ return [
         ContactRevision::class => ContactPolicy::class,
         Location::class => LocationPolicy::class,
         LocationRevision::class => LocationPolicy::class,
+        Tag::class => TagPolicy::class,
+        Tagged::class => TaggedPolicy::class,
     ],
 
     /*
@@ -165,6 +173,8 @@ return [
         'directory' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_DIRECTORY', true),
         'contacts' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_CONTACTS', true),
         'locations' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_LOCATIONS', true),
+        'tags' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_TAGS', true),
+        'tagged' => (bool) env('PLAYGROUND_DIRECTORY_RESOURCE_ROUTES_TAGGED', true),
     ],
 
     /*
@@ -207,12 +217,18 @@ return [
         'manager' => [
             'playground-directory-resource:contact:*',
             'playground-directory-resource:location:*',
+            'playground-directory-resource:tag:*',
+            'playground-directory-resource:tagged:*',
         ],
         'user' => [
             'playground-directory-resource:contact:view',
             'playground-directory-resource:contact:viewAny',
             'playground-directory-resource:location:view',
             'playground-directory-resource:location:viewAny',
+            'playground-directory-resource:tag:view',
+            'playground-directory-resource:tag:viewAny',
+            'playground-directory-resource:tagged:view',
+            'playground-directory-resource:tagged:viewAny',
         ],
     ],
 ];

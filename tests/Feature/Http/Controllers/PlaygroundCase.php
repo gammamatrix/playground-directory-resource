@@ -26,13 +26,7 @@ class PlaygroundCase extends TestCase
     use Resource\Playground\LockJsonTrait;
     use Resource\Playground\LockTrait;
     use Resource\Playground\RestoreJsonTrait;
-    use Resource\Playground\RestoreRevisionJsonTrait;
-    use Resource\Playground\RestoreRevisionTrait;
     use Resource\Playground\RestoreTrait;
-    use Resource\Playground\RevisionJsonTrait;
-    use Resource\Playground\RevisionsJsonTrait;
-    use Resource\Playground\RevisionsTrait;
-    use Resource\Playground\RevisionTrait;
     use Resource\Playground\ShowJsonTrait;
     use Resource\Playground\ShowTrait;
     use Resource\Playground\StoreJsonTrait;

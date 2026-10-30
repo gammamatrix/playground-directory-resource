@@ -15,8 +15,15 @@ $viewLocations = \Playground\Auth\Facades\Can::access($user, [
     'roles' => ['admin', 'manager', 'publisher'],
 ])->allowed();
 
+$viewTags = \Playground\Auth\Facades\Can::access($user, [
+    'allow' => false,
+    'any' => true,
+    'privilege' => 'playground-directory-resource:tag:viewAny',
+    'roles' => ['admin', 'manager', 'publisher'],
+])->allowed();
 
-if (!$viewContacts && !$viewLocations) {
+
+if (!$viewContacts && !$viewLocations && !$viewTags) {
     return;
 }
 ?>
@@ -29,7 +36,9 @@ if (!$viewContacts && !$viewLocations) {
                 <div class="card">
                     <div class="card-header">
                         Directory Contact
-                        <small class="text-muted">contacts and locations</small>
+                        <small class="text-muted"
+                            >contacts, locations and tags</small
+                        >
                     </div>
                     <ul class="list-group list-group-flush">
                         @if ($viewContacts)
@@ -47,6 +56,15 @@ if (!$viewContacts && !$viewLocations) {
                                 class="list-group-item list-group-item-action"
                             >
                                 Locations
+                            </a>
+                        @endif
+
+                        @if ($viewTags)
+                            <a
+                                href="{{ route('playground.directory.resource.tags') }}"
+                                class="list-group-item list-group-item-action"
+                            >
+                                Tags
                             </a>
                         @endif
                     </ul>

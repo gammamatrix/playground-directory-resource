@@ -7,7 +7,7 @@
     "module_labels": "Directories",
     "module_slug": "directory",
     "module_slugs": "directories",
-    "name": "Index",
+    "name": "index",
     "namespace": "Playground/Directory/Resource",
     "organization": "Playground",
     "package": "playground-directory-resource",

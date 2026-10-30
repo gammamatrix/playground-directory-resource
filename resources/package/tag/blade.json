@@ -1,0 +1,25 @@
+{
+    "class": "tag/index.blade",
+    "config": "playground-directory-resource",
+    "fqdn": "tag/index.blade",
+    "module": "Directory",
+    "module_slug": "directory",
+    "name": "Tag",
+    "namespace": "Playground/Directory/Resource",
+    "organization": "Playground",
+    "package": "playground-directory-resource",
+    "extends": "playground::layouts.resource",
+    "folder": "tag",
+    "model": "Tag",
+    "model_column": "tag",
+    "model_label": "Tag",
+    "model_slug": "tag",
+    "model_variable": "tag",
+    "model_variable_plural": "tags",
+    "type": "playground-resource",
+    "route": "playground.directory.resource",
+    "title": "Tag",
+    "models": {
+        "Tag": "resources/configurations/playground-directory/tag/model.json"
+    }
+}

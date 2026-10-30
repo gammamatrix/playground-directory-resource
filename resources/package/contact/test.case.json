@@ -1,7 +1,7 @@
 {
     "class": "ContactTestCase",
     "config": "playground-directory-resource",
-    "extends": "PlaygroundCase",
+    "extends": "RevisionTestCase",
     "fqdn": "Tests/Feature/Playground/Directory/Resource/Http/Controllers/ContactTestCase",
     "model": "Contact",
     "model_fqdn": "Playground/Directory/Models/Contact",

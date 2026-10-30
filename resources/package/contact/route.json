@@ -7,7 +7,7 @@
     "module_labels": "Directories",
     "module_slug": "directory",
     "module_slugs": "directories",
-    "name": "Contact",
+    "name": "contact",
     "namespace": "Playground/Directory/Resource",
     "organization": "Playground",
     "package": "playground-directory-resource",
