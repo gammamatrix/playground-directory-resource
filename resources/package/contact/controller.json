@@ -55,6 +55,7 @@
     "privilege": "playground-directory-resource:contact",
     "route": "playground.directory.resource",
     "view": "playground-directory-resource::contact",
+    "actions": [],
     "implements": [],
     "uses": [],
     "packageInfo": {

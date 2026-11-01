@@ -53,6 +53,7 @@
     "privilege": "playground-directory-resource",
     "route": "playground.directory.resource",
     "view": "",
+    "actions": [],
     "implements": [],
     "uses": [],
     "packageInfo": {

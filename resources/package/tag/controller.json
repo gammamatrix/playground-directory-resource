@@ -55,6 +55,7 @@
     "privilege": "playground-directory-resource:tag",
     "route": "playground.directory.resource",
     "view": "playground-directory-resource::tag",
+    "actions": [],
     "implements": [],
     "uses": [],
     "packageInfo": {
